@@ -1,0 +1,18 @@
+Chuột phải Project => Add new items => Data => chọn cái đầu tiên
+=> EF Design form database => new connection => chọn đúng DB
+=> OK => 
+--Doan
+connection string="data source=Doan-Vu-IT;
+--Ngoc Nam
+NgocNam
+DESKTOP-1S1KUJ1\SQLEXPRESS
+
+
+Đặt tên:(Save connection setting): DBModel
+=> Framework 6.x
+=> Tích chọn Tables (toàn bộ bảng)
+=> Model Namespace: DBEntites
+
+Có thể thay đổi connectionString trong App.config
+
+Xóa Navigation Properties trong DataModels.edmx[Diagram1]
