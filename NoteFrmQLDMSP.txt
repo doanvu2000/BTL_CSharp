@@ -1,0 +1,5 @@
+- label: lblDanhMuc, lblTenDanhMuc, lblShowSP, ..
+- textbox: txtMaDM, txtTenDM, txtTenSP, txtSoLuongTon, txtGia, txtMota
+- combobox: cblNCC
+- button: btnThem, btnSua, btnXoa, btnCancel, btnThemSP, btnSuaSP, btnXoaSP, btnCancelSP 
+- dataGridView: dgvSanPham, dgvDanhMuc
