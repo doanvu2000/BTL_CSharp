@@ -14,8 +14,8 @@ namespace BTL_CSharp
     
     public partial class ChiTietHD
     {
-        public string MaSP { get; set; }
-        public string MaHD { get; set; }
+        public int MaSP { get; set; }
+        public int MaHD { get; set; }
         public Nullable<int> SLBan { get; set; }
     
         public virtual HoaDon HoaDon { get; set; }

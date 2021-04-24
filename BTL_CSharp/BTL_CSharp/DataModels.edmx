@@ -4,37 +4,37 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DBEntites.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="QLCHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ChiTietHD">
           <Key>
             <PropertyRef Name="MaSP" />
             <PropertyRef Name="MaHD" />
           </Key>
-          <Property Name="MaSP" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaHD" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaSP" Type="int" Nullable="false" />
+          <Property Name="MaHD" Type="int" Nullable="false" />
           <Property Name="SLBan" Type="int" />
         </EntityType>
         <EntityType Name="DanhMuc">
           <Key>
             <PropertyRef Name="MaDM" />
           </Key>
-          <Property Name="MaDM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenDM" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
             <PropertyRef Name="MaHD" />
           </Key>
-          <Property Name="MaHD" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NgayLap" Type="datetime" />
-          <Property Name="MaKH" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKH" Type="int" Nullable="false" />
+          <Property Name="MaNV" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="KhachHang">
           <Key>
             <PropertyRef Name="MaKH" />
           </Key>
-          <Property Name="MaKH" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaKH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenKH" Type="nvarchar" MaxLength="30" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="150" />
@@ -43,7 +43,7 @@
           <Key>
             <PropertyRef Name="MaNCC" />
           </Key>
-          <Property Name="MaNCC" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaNCC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenNCC" Type="nvarchar" MaxLength="20" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="150" />
@@ -52,7 +52,7 @@
           <Key>
             <PropertyRef Name="MaNV" />
           </Key>
-          <Property Name="MaNV" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaNV" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TenNV" Type="nvarchar" MaxLength="30" />
           <Property Name="SDT" Type="nvarchar" MaxLength="20" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="150" />
@@ -62,19 +62,19 @@
           <Key>
             <PropertyRef Name="MaSP" />
           </Key>
-          <Property Name="MaSP" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="MaDM" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MaDM" Type="int" Nullable="false" />
           <Property Name="TenSP" Type="nvarchar" MaxLength="30" />
           <Property Name="SLTon" Type="int" />
           <Property Name="Gia" Type="int" />
           <Property Name="MoTa" Type="ntext" />
-          <Property Name="MaNCC" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="MaNCC" Type="int" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
-            <PropertyRef Name="TKID" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="TKID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserName" Type="nvarchar" MaxLength="30" />
           <Property Name="PassWord" Type="nvarchar" MaxLength="30" />
           <Property Name="Role" Type="int" />
@@ -140,7 +140,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SanPham__MaNCC__34C8D9D1">
-          <End Role="NCC" Type="Self.NCC" Multiplicity="1" />
+          <End Role="NCC" Type="Self.NCC" Multiplicity="0..1" />
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NCC">
@@ -151,7 +151,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBEntitesStoreContainer">
+        <EntityContainer Name="QLCHModelStoreContainer">
           <EntitySet Name="ChiTietHD" EntityType="Self.ChiTietHD" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HoaDon" EntityType="Self.HoaDon" Schema="dbo" store:Type="Tables" />
@@ -189,14 +189,14 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="DBEntites" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="QLCHModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ChiTietHD">
           <Key>
             <PropertyRef Name="MaSP" />
             <PropertyRef Name="MaHD" />
           </Key>
-          <Property Name="MaSP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaHD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaSP" Type="Int32" Nullable="false" />
+          <Property Name="MaHD" Type="Int32" Nullable="false" />
           <Property Name="SLBan" Type="Int32" />
           <NavigationProperty Name="HoaDon" Relationship="Self.FK__ChiTietHD__MaHD__31EC6D26" FromRole="ChiTietHD" ToRole="HoaDon" />
           <NavigationProperty Name="SanPham" Relationship="Self.FK__ChiTietHD__MaSP__30F848ED" FromRole="ChiTietHD" ToRole="SanPham" />
@@ -205,7 +205,7 @@
           <Key>
             <PropertyRef Name="MaDM" />
           </Key>
-          <Property Name="MaDM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaDM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenDM" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SanPhams" Relationship="Self.FK__SanPham__MaDM__300424B4" FromRole="DanhMuc" ToRole="SanPham" />
         </EntityType>
@@ -213,10 +213,10 @@
           <Key>
             <PropertyRef Name="MaHD" />
           </Key>
-          <Property Name="MaHD" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NgayLap" Type="DateTime" Precision="3" />
-          <Property Name="MaKH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKH" Type="Int32" Nullable="false" />
+          <Property Name="MaNV" Type="Int32" Nullable="false" />
           <NavigationProperty Name="ChiTietHDs" Relationship="Self.FK__ChiTietHD__MaHD__31EC6D26" FromRole="HoaDon" ToRole="ChiTietHD" />
           <NavigationProperty Name="KhachHang" Relationship="Self.FK__HoaDon__MaKH__32E0915F" FromRole="HoaDon" ToRole="KhachHang" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__HoaDon__MaNV__33D4B598" FromRole="HoaDon" ToRole="NhanVien" />
@@ -225,7 +225,7 @@
           <Key>
             <PropertyRef Name="MaKH" />
           </Key>
-          <Property Name="MaKH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaKH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenKH" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -235,7 +235,7 @@
           <Key>
             <PropertyRef Name="MaNCC" />
           </Key>
-          <Property Name="MaNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaNCC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -245,7 +245,7 @@
           <Key>
             <PropertyRef Name="MaNV" />
           </Key>
-          <Property Name="MaNV" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaNV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TenNV" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="SDT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="DiaChi" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
@@ -256,22 +256,22 @@
           <Key>
             <PropertyRef Name="MaSP" />
           </Key>
-          <Property Name="MaSP" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="MaDM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MaDM" Type="Int32" Nullable="false" />
           <Property Name="TenSP" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="SLTon" Type="Int32" />
           <Property Name="Gia" Type="Int32" />
           <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="MaNCC" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaNCC" Type="Int32" />
           <NavigationProperty Name="ChiTietHDs" Relationship="Self.FK__ChiTietHD__MaSP__30F848ED" FromRole="SanPham" ToRole="ChiTietHD" />
           <NavigationProperty Name="DanhMuc" Relationship="Self.FK__SanPham__MaDM__300424B4" FromRole="SanPham" ToRole="DanhMuc" />
           <NavigationProperty Name="NCC" Relationship="Self.FK__SanPham__MaNCC__34C8D9D1" FromRole="SanPham" ToRole="NCC" />
         </EntityType>
         <EntityType Name="TaiKhoan">
           <Key>
-            <PropertyRef Name="TKID" />
+            <PropertyRef Name="ID" />
           </Key>
-          <Property Name="TKID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="PassWord" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Role" Type="Int32" />
@@ -337,7 +337,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__SanPham__MaNCC__34C8D9D1">
-          <End Role="NCC" Type="Self.NCC" Multiplicity="1" />
+          <End Role="NCC" Type="Self.NCC" Multiplicity="0..1" />
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="NCC">
@@ -348,7 +348,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DBModel" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="DBEntites" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ChiTietHDs" EntityType="Self.ChiTietHD" />
           <EntitySet Name="DanhMucs" EntityType="Self.DanhMuc" />
           <EntitySet Name="HoaDons" EntityType="Self.HoaDon" />
@@ -387,9 +387,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="DBEntitesStoreContainer" CdmEntityContainer="DBModel">
+        <EntityContainerMapping StorageEntityContainer="QLCHModelStoreContainer" CdmEntityContainer="DBEntites">
           <EntitySetMapping Name="ChiTietHDs">
-            <EntityTypeMapping TypeName="DBEntites.ChiTietHD">
+            <EntityTypeMapping TypeName="QLCHModel.ChiTietHD">
               <MappingFragment StoreEntitySet="ChiTietHD">
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
@@ -398,7 +398,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DanhMucs">
-            <EntityTypeMapping TypeName="DBEntites.DanhMuc">
+            <EntityTypeMapping TypeName="QLCHModel.DanhMuc">
               <MappingFragment StoreEntitySet="DanhMuc">
                 <ScalarProperty Name="MaDM" ColumnName="MaDM" />
                 <ScalarProperty Name="TenDM" ColumnName="TenDM" />
@@ -406,7 +406,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="HoaDons">
-            <EntityTypeMapping TypeName="DBEntites.HoaDon">
+            <EntityTypeMapping TypeName="QLCHModel.HoaDon">
               <MappingFragment StoreEntitySet="HoaDon">
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
@@ -416,7 +416,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="KhachHangs">
-            <EntityTypeMapping TypeName="DBEntites.KhachHang">
+            <EntityTypeMapping TypeName="QLCHModel.KhachHang">
               <MappingFragment StoreEntitySet="KhachHang">
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="TenKH" ColumnName="TenKH" />
@@ -426,7 +426,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NCCs">
-            <EntityTypeMapping TypeName="DBEntites.NCC">
+            <EntityTypeMapping TypeName="QLCHModel.NCC">
               <MappingFragment StoreEntitySet="NCC">
                 <ScalarProperty Name="MaNCC" ColumnName="MaNCC" />
                 <ScalarProperty Name="TenNCC" ColumnName="TenNCC" />
@@ -436,7 +436,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="NhanViens">
-            <EntityTypeMapping TypeName="DBEntites.NhanVien">
+            <EntityTypeMapping TypeName="QLCHModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
                 <ScalarProperty Name="MaNV" ColumnName="MaNV" />
                 <ScalarProperty Name="TenNV" ColumnName="TenNV" />
@@ -447,7 +447,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SanPhams">
-            <EntityTypeMapping TypeName="DBEntites.SanPham">
+            <EntityTypeMapping TypeName="QLCHModel.SanPham">
               <MappingFragment StoreEntitySet="SanPham">
                 <ScalarProperty Name="MaSP" ColumnName="MaSP" />
                 <ScalarProperty Name="MaDM" ColumnName="MaDM" />
@@ -460,9 +460,9 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TaiKhoans">
-            <EntityTypeMapping TypeName="DBEntites.TaiKhoan">
+            <EntityTypeMapping TypeName="QLCHModel.TaiKhoan">
               <MappingFragment StoreEntitySet="TaiKhoan">
-                <ScalarProperty Name="TKID" ColumnName="TKID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="PassWord" ColumnName="PassWord" />
                 <ScalarProperty Name="Role" ColumnName="Role" />

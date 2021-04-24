@@ -14,7 +14,7 @@ namespace BTL_CSharp
     
     public partial class TaiKhoan
     {
-        public int TKID { get; set; }
+        public int ID { get; set; }
         public string UserName { get; set; }
         public string PassWord { get; set; }
         public Nullable<int> Role { get; set; }

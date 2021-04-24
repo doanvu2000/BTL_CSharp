@@ -12,7 +12,7 @@ namespace BTL_CSharp
 {
     public partial class frmQLDM : Form
     {
-        DBModel db = new DBModel();
+        DBEntites db = new DBEntites();
         public frmQLDM()
         {
             InitializeComponent();
@@ -53,7 +53,7 @@ namespace BTL_CSharp
             txtMaDM.Text = viewRow.Cells[0].Value+"";
             lblDMViewSP.Text = txtTenDM.Text = viewRow.Cells[1].Value+"";
             lblDMViewSP.Text = "Danh mục: " + lblDMViewSP.Text;
-            string maDM = txtMaDM.Text + "";
+            int maDM = int.Parse(txtMaDM.Text+ "");
             dgvSanPham.DataSource = db.SanPhams.Select(x => new
             {
                 MaSP = x.MaSP,
