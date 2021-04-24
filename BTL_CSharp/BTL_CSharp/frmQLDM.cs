@@ -28,7 +28,6 @@ namespace BTL_CSharp
             for (int i = 0; i < dg.ColumnCount; i++)
             {
                 dg.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
             }
         }
         public void HienThiDanhMuc()
