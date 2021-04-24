@@ -20,7 +20,7 @@ namespace BTL_CSharp
             this.SanPhams = new HashSet<SanPham>();
         }
     
-        public string MaDM { get; set; }
+        public int MaDM { get; set; }
         public string TenDM { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

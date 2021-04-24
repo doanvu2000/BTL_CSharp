@@ -12,7 +12,7 @@ namespace BTL_CSharp
 {
     public partial class Form1 : Form
     {
-        DBModel db = new DBModel();
+        DBEntites db = new DBEntites();
         public Form1()
         {
             InitializeComponent();

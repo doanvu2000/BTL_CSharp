@@ -20,10 +20,10 @@ namespace BTL_CSharp
             this.ChiTietHDs = new HashSet<ChiTietHD>();
         }
     
-        public string MaHD { get; set; }
+        public int MaHD { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
-        public string MaKH { get; set; }
-        public string MaNV { get; set; }
+        public int MaKH { get; set; }
+        public int MaNV { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ChiTietHD> ChiTietHDs { get; set; }

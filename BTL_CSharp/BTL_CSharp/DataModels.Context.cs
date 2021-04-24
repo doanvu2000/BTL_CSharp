@@ -13,10 +13,10 @@ namespace BTL_CSharp
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DBModel : DbContext
+    public partial class DBEntites : DbContext
     {
-        public DBModel()
-            : base("name=DBModel")
+        public DBEntites()
+            : base("name=DBEntites")
         {
         }
     

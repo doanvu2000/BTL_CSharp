@@ -4,21 +4,21 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5c5049fb3cfe40589f85929f44f4422c" Name="Diagram1" ZoomLevel="111">
-        <EntityTypeShape EntityType="DBEntites.ChiTietHD" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.DanhMuc" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.HoaDon" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.KhachHang" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.NCC" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.NhanVien" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.SanPham" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBEntites.TaiKhoan" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="DBEntites.FK__ChiTietHD__MaHD__31EC6D26" ManuallyRouted="false" />
-        <AssociationConnector Association="DBEntites.FK__ChiTietHD__MaSP__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="DBEntites.FK__SanPham__MaDM__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="DBEntites.FK__HoaDon__MaKH__32E0915F" ManuallyRouted="false" />
-        <AssociationConnector Association="DBEntites.FK__HoaDon__MaNV__33D4B598" ManuallyRouted="false" />
-        <AssociationConnector Association="DBEntites.FK__SanPham__MaNCC__34C8D9D1" ManuallyRouted="false" />
+      <Diagram DiagramId="bbed12311ae54f41bb3d90028abcb2cd" Name="Diagram1">
+        <EntityTypeShape EntityType="QLCHModel.ChiTietHD" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.DanhMuc" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.HoaDon" Width="1.5" PointX="3" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.KhachHang" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.NCC" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.NhanVien" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.SanPham" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCHModel.TaiKhoan" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <AssociationConnector Association="QLCHModel.FK__ChiTietHD__MaHD__31EC6D26" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHModel.FK__ChiTietHD__MaSP__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHModel.FK__SanPham__MaDM__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHModel.FK__HoaDon__MaKH__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHModel.FK__HoaDon__MaNV__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCHModel.FK__SanPham__MaNCC__34C8D9D1" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
