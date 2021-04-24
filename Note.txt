@@ -8,11 +8,10 @@ NgocNam
 DESKTOP-1S1KUJ1\SQLEXPRESS
 
 
-Đặt tên:(Save connection setting): DBModel
+Đặt tên:(Save connection setting): DBEntites
 => Framework 6.x
 => Tích chọn Tables (toàn bộ bảng)
-=> Model Namespace: DBEntites
+=> Model Namespace: DBModel
 
 Có thể thay đổi connectionString trong App.config
 
-Xóa Navigation Properties trong DataModels.edmx[Diagram1]
