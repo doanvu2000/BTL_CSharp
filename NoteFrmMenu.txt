@@ -1,0 +1,1 @@
+- button: btnQLDM, btnQLSP, btnQLHD, btnQLNCC, btnQLNV, btnQLKH

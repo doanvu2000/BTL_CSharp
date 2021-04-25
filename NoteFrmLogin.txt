@@ -1,0 +1,4 @@
+- label: lblUserName, lblPassWord, lblForgotPassWord
+- checkbox : chkRemember
+- textbox: txtUserName, txtPassWord
+- button: btnLogin, btnExit
