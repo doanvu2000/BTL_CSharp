@@ -17,6 +17,7 @@ namespace BTL_CSharp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
+
         }
     }
 }
