@@ -6,6 +6,8 @@ connection string="data source=Doan-Vu-IT;
 --Ngoc Nam
 NgocNam
 DESKTOP-1S1KUJ1\SQLEXPRESS
+--TranNgoc
+DESKTOP-RPTKDJ7
 
 
 Đặt tên:(Save connection setting): DBEntites
