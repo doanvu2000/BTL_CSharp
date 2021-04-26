@@ -170,6 +170,7 @@ namespace BTL_CSharp
             this.txtPassWord.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassWord.Multiline = true;
             this.txtPassWord.Name = "txtPassWord";
+            this.txtPassWord.PasswordChar = '*';
             this.txtPassWord.Size = new System.Drawing.Size(252, 36);
             this.txtPassWord.TabIndex = 1;
             // 
