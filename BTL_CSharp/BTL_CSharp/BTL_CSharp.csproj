@@ -100,6 +100,18 @@
     <Compile Include="frmQLDMSP.Designer.cs">
       <DependentUpon>frmQLDMSP.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmQLKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLKH.Designer.cs">
+      <DependentUpon>frmQLKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLNV.Designer.cs">
+      <DependentUpon>frmQLNV.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
@@ -131,6 +143,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLDMSP.resx">
       <DependentUpon>frmQLDMSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLKH.resx">
+      <DependentUpon>frmQLKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLNV.resx">
+      <DependentUpon>frmQLNV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
