@@ -108,5 +108,10 @@ namespace BTL_CSharp
             ChiTietHoaDon ss = new ChiTietHoaDon(ma);
             ss.Show();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

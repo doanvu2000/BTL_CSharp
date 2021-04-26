@@ -179,5 +179,10 @@ namespace BTL_CSharp
                 Form1_Load(sender, e);
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

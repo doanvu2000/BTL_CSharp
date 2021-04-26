@@ -168,6 +168,9 @@ namespace BTL_CSharp
             clear();
         }
 
-      
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

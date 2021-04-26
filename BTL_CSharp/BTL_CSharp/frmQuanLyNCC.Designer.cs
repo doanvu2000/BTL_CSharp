@@ -29,6 +29,7 @@ namespace BTL_CSharp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyNCC));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@ namespace BTL_CSharp
             this.TenNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNCC)).BeginInit();
@@ -59,28 +61,29 @@ namespace BTL_CSharp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(440, 51);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.label1.Location = new System.Drawing.Point(396, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(236, 20);
+            this.label1.Size = new System.Drawing.Size(369, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "QUẢN LÝ NHÀ CUNG CẤP";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 38);
+            this.label2.Location = new System.Drawing.Point(29, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 17);
+            this.label2.Size = new System.Drawing.Size(58, 16);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã NCC";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 92);
+            this.label3.Location = new System.Drawing.Point(29, 92);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 17);
+            this.label3.Size = new System.Drawing.Size(63, 16);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên NCC";
             // 
@@ -88,47 +91,51 @@ namespace BTL_CSharp
             // 
             this.txtMaNCC.Enabled = false;
             this.txtMaNCC.Location = new System.Drawing.Point(169, 38);
+            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(150, 22);
+            this.txtMaNCC.Size = new System.Drawing.Size(151, 22);
             this.txtMaNCC.TabIndex = 3;
             // 
             // txtTenNCC
             // 
             this.txtTenNCC.Location = new System.Drawing.Point(169, 92);
+            this.txtTenNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(150, 22);
+            this.txtTenNCC.Size = new System.Drawing.Size(151, 22);
             this.txtTenNCC.TabIndex = 4;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(438, 35);
+            this.label4.Location = new System.Drawing.Point(437, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(36, 17);
+            this.label4.Size = new System.Drawing.Size(35, 16);
             this.label4.TabIndex = 1;
             this.label4.Text = "SĐT";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(438, 97);
+            this.label5.Location = new System.Drawing.Point(437, 97);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 17);
+            this.label5.Size = new System.Drawing.Size(48, 16);
             this.label5.TabIndex = 2;
             this.label5.Text = "Địa chỉ";
             // 
             // txtSDT
             // 
-            this.txtSDT.Location = new System.Drawing.Point(519, 35);
+            this.txtSDT.Location = new System.Drawing.Point(519, 34);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(158, 22);
+            this.txtSDT.Size = new System.Drawing.Size(159, 22);
             this.txtSDT.TabIndex = 3;
             // 
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(519, 95);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(158, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(159, 22);
             this.txtDiaChi.TabIndex = 4;
             // 
             // panel1
@@ -144,39 +151,52 @@ namespace BTL_CSharp
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.txtMaNCC);
-            this.panel1.Location = new System.Drawing.Point(68, 90);
+            this.panel1.Location = new System.Drawing.Point(31, 89);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(763, 235);
             this.panel1.TabIndex = 5;
             // 
             // btnHuy
             // 
-            this.btnHuy.Location = new System.Drawing.Point(494, 169);
+            this.btnHuy.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnHuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnHuy.Location = new System.Drawing.Point(493, 169);
+            this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(110, 55);
+            this.btnHuy.Size = new System.Drawing.Size(109, 55);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
-            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnXoa
             // 
+            this.btnXoa.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnXoa.Location = new System.Drawing.Point(292, 169);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(110, 55);
+            this.btnXoa.Size = new System.Drawing.Size(109, 55);
             this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnThem
             // 
+            this.btnThem.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnThem.Location = new System.Drawing.Point(81, 169);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(110, 55);
+            this.btnThem.Size = new System.Drawing.Size(109, 55);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel2
@@ -184,24 +204,30 @@ namespace BTL_CSharp
             this.panel2.Controls.Add(this.btnTraCuu);
             this.panel2.Controls.Add(this.txtTraCuu);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(866, 90);
+            this.panel2.Location = new System.Drawing.Point(830, 89);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 235);
+            this.panel2.Size = new System.Drawing.Size(285, 235);
             this.panel2.TabIndex = 6;
             // 
             // btnTraCuu
             // 
-            this.btnTraCuu.Location = new System.Drawing.Point(53, 141);
+            this.btnTraCuu.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTraCuu.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnTraCuu.Location = new System.Drawing.Point(53, 142);
+            this.btnTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(172, 42);
             this.btnTraCuu.TabIndex = 2;
             this.btnTraCuu.Text = "TraCuu";
-            this.btnTraCuu.UseVisualStyleBackColor = true;
+            this.btnTraCuu.UseVisualStyleBackColor = false;
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
             // 
             // txtTraCuu
             // 
-            this.txtTraCuu.Location = new System.Drawing.Point(53, 77);
+            this.txtTraCuu.Location = new System.Drawing.Point(53, 78);
+            this.txtTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTraCuu.Multiline = true;
             this.txtTraCuu.Name = "txtTraCuu";
             this.txtTraCuu.Size = new System.Drawing.Size(172, 40);
@@ -210,21 +236,23 @@ namespace BTL_CSharp
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(110, 33);
+            this.label6.Location = new System.Drawing.Point(109, 33);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 17);
+            this.label6.Size = new System.Drawing.Size(58, 16);
             this.label6.TabIndex = 0;
             this.label6.Text = "Mã NCC";
             // 
             // dgvNCC
             // 
+            this.dgvNCC.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNCC,
             this.TenNCC,
             this.SDT,
             this.DiaChi});
-            this.dgvNCC.Location = new System.Drawing.Point(68, 351);
+            this.dgvNCC.Location = new System.Drawing.Point(31, 350);
+            this.dgvNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvNCC.Name = "dgvNCC";
             this.dgvNCC.RowHeadersWidth = 51;
             this.dgvNCC.RowTemplate.Height = 24;
@@ -264,15 +292,31 @@ namespace BTL_CSharp
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Width = 125;
             // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.Location = new System.Drawing.Point(1055, 33);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(59, 31);
+            this.btnClose.TabIndex = 8;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // frmQuanLyNCC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 616);
+            this.BackColor = System.Drawing.SystemColors.Info;
+            this.ClientSize = new System.Drawing.Size(1129, 615);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.dgvNCC);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuanLyNCC";
             this.Text = "frmQuanLyNCC";
             this.Load += new System.EventHandler(this.frmQuanLyNCC_Load);
@@ -310,5 +354,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.DataGridViewTextBoxColumn TenNCC;
         private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
+        private System.Windows.Forms.Button btnClose;
     }
 }
