@@ -18,6 +18,8 @@ namespace BTL_CSharp
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin()); 
 
+
+ 
         }
     }
 }
