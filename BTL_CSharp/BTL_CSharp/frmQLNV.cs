@@ -174,5 +174,10 @@ namespace BTL_CSharp
             txttimkiem.Clear();
             clear();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

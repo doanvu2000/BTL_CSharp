@@ -21,8 +21,8 @@ namespace BTL_CSharp
 
         public ChiTietHoaDon(int MaHD)
         {
-            this.MaHD = MaHD;
             InitializeComponent();
+            this.MaHD = MaHD;
         }
 
         private void ChiTietHoaDon_Load(object sender, EventArgs e)
@@ -43,14 +43,14 @@ namespace BTL_CSharp
                  {
                      hd = p,
                      sp = c
-                 }).Select(p => new
+                 }).Where(p=> p.hd.MaHD == MaHD).Select(p => new
                  {
                      MaSP = p.hd.MaSP,
                      TenSP = p.sp.TenSP,
                      SLBan = p.hd.SLBan,
                      DonGia = p.sp.Gia,
                      ThanhTien = p.hd.SLBan * p.sp.Gia,
-                 }) ;
+                 });
                 dgvChiTietHoaDon.DataSource = ct.ToList();
                 for(int i = 0; i < dgvChiTietHoaDon.ColumnCount; i++)
                 {
@@ -81,6 +81,11 @@ namespace BTL_CSharp
                 lbSDT.Text = kh.SDT;
 
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
