@@ -92,5 +92,10 @@ namespace BTL_CSharp
             pnlAction.Controls.Add(f);
             f.Show();
         }
+
+        private void btnCreateBill_Click(object sender, EventArgs e)
+        {
+            new frmBeforeCreateBill(user).Show();
+        }
     }
 }

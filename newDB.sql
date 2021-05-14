@@ -195,9 +195,12 @@ Role int
 )
 insert into TaiKhoan(UserName,PassWord,Role) values ('admin','12345',1), ('nv','12345',2)
 select * from TaiKhoan
-delete from taikhoan
+delete from TaiKhoan where id = 1 or id = 2
+go
 Alter table taikhoan 
   add manv int
+  go
  ALTER TABLE TaiKhoan
-ADD constraint fk_tk foreign key (manv) references NhanVien(manv)
-insert into TaiKhoan values('admin','12345',1,5), ('LanNguyen','12345',2,1), ('NgocHung','12345',2,4)
+ADD constraint fk_tkhoan foreign key (manv) references NhanVien(manv)
+go
+insert into TaiKhoan values('admin','12345',1,2), ('LanNguyen','12345',2,1), ('NgocHung','12345',2,4)

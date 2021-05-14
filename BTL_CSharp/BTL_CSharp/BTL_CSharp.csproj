@@ -88,6 +88,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBeforeCreateBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBeforeCreateBill.Designer.cs">
+      <DependentUpon>frmBeforeCreateBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmLapHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapHoaDon.Designer.cs">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +159,8 @@
     <Compile Include="SanPham.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
+    <Compile Include="SanPhamTam.cs" />
+    <Compile Include="SanPhamTonTam.cs" />
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
@@ -156,8 +170,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBeforeCreateBill.resx">
+      <DependentUpon>frmBeforeCreateBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDon.resx">
       <DependentUpon>frmHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLapHoaDon.resx">
+      <DependentUpon>frmLapHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

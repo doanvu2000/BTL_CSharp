@@ -43,9 +43,10 @@ namespace BTL_CSharp
             this.btnQLDM = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlAction = new System.Windows.Forms.Panel();
+            this.btnCreateBill = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -60,6 +61,7 @@ namespace BTL_CSharp
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.panel2.Controls.Add(this.btnCreateBill);
             this.panel2.Controls.Add(this.pictureBox7);
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.pictureBox5);
@@ -225,6 +227,16 @@ namespace BTL_CSharp
             this.panel1.Size = new System.Drawing.Size(1917, 94);
             this.panel1.TabIndex = 1;
             // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblUser.Location = new System.Drawing.Point(47, 30);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(97, 25);
+            this.lblUser.TabIndex = 13;
+            this.lblUser.Text = "Xin chào";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -232,20 +244,10 @@ namespace BTL_CSharp
             this.label1.Location = new System.Drawing.Point(543, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(580, 32);
+            this.label1.Size = new System.Drawing.Size(703, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "PHẦN MỀM QUẢN LÝ CỬA HÀNG MỸ PHẨM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblUser.Location = new System.Drawing.Point(47, 30);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(79, 20);
-            this.lblUser.TabIndex = 13;
-            this.lblUser.Text = "Xin chào";
             // 
             // pnlAction
             // 
@@ -256,9 +258,19 @@ namespace BTL_CSharp
             this.pnlAction.Size = new System.Drawing.Size(1500, 984);
             this.pnlAction.TabIndex = 2;
             // 
+            // btnCreateBill
+            // 
+            this.btnCreateBill.Location = new System.Drawing.Point(30, 647);
+            this.btnCreateBill.Name = "btnCreateBill";
+            this.btnCreateBill.Size = new System.Drawing.Size(153, 69);
+            this.btnCreateBill.TabIndex = 13;
+            this.btnCreateBill.Text = "Lập hóa đơn";
+            this.btnCreateBill.UseVisualStyleBackColor = true;
+            this.btnCreateBill.Click += new System.EventHandler(this.btnCreateBill_Click);
+            // 
             // frmMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(1512, 946);
@@ -304,5 +316,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.Panel pnlAction;
+        private System.Windows.Forms.Button btnCreateBill;
     }
 }

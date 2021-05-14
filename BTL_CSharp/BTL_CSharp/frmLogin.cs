@@ -52,6 +52,7 @@ namespace BTL_CSharp
         {
             TaiKhoan x;
             x = db.TaiKhoans.Where(p=> p.UserName == username).Select(p => p).FirstOrDefault();
+            
             return x;
         }
 

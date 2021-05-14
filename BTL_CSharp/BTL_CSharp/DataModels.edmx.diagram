@@ -19,6 +19,8 @@
         <AssociationConnector Association="QLCHModel.FK__HoaDon__MaKH__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="QLCHModel.FK__HoaDon__MaNV__33D4B598" ManuallyRouted="false" />
         <AssociationConnector Association="QLCHModel.FK__SanPham__MaNCC__34C8D9D1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLCHModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.75" />
+        <AssociationConnector Association="QLCHModel.fk_tk" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
