@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,38 +18,48 @@ namespace BTL_CSharp
         List<SanPham> listSP = new List<SanPham>();
         public KhachHang kh = new KhachHang();
         public TaiKhoan tk = new TaiKhoan();
+        bool sale = false;
         public frmLapHoaDon()
         {
             InitializeComponent();
-            
+
         }
-        public frmLapHoaDon(KhachHang k,TaiKhoan t)
+        public frmLapHoaDon(KhachHang k, TaiKhoan t, bool isSale)
         {
             InitializeComponent();
             kh = k;
             tk = t;
-            lblKhachHang.Text = "Khách hàng: " + kh.TenKH;
-            lblNhanVien.Text = "Nhân viên: " + t.UserName;      
+            sale = isSale;
+            lblKhachHang.Text = "Khách hàng: " + kh.TenKH + "               SĐT: " + kh.SDT;
+
+            if (sale)
+            {
+                lblSale.Text = "Đã mua hàng ít nhất 1 lần, được giảm 2% hóa đơn";
+            }
+            else lblSale.Text = "";
+            lblNhanVien.Text = "Nhân viên tạo hóa đơn: " + t.UserName;
+            
         }
         void PopulateDataGridViewSP()
         {
             using (DBEntites db = new DBEntites())
             {
                 // Kết nối hai bảng Sản phẩm và bảng NCC
-                var sp = db.SanPhams.Join(db.NCCs, s => s.MaNCC, n => n.MaNCC, 
-                    (s, n) => new { 
-                        sp=s,
-                        ncc=n
+                var sp = db.SanPhams.Join(db.NCCs, s => s.MaNCC, n => n.MaNCC,
+                    (s, n) => new
+                    {
+                        sp = s,
+                        ncc = n
 
                     }).Select(s => new
-                {
-                    masp = s.sp.MaSP,
-                    tensp = s.sp.TenSP,
-                    slton = s.sp.SLTon,
-                    gia = s.sp.Gia,
-                    ncc = s.ncc.TenNCC,
-                    mancc = s.ncc.MaNCC
-                });
+                    {
+                        masp = s.sp.MaSP,
+                        tensp = s.sp.TenSP,
+                        slton = s.sp.SLTon,
+                        gia = s.sp.Gia,
+                        ncc = s.ncc.TenNCC,
+                        mancc = s.ncc.MaNCC
+                    });
 
                 /*
                  * Sử dụng đối tượng SanPhamTonTam để thao tác dữ liệu tránh trường hợp người dùng 
@@ -63,14 +74,14 @@ namespace BTL_CSharp
                     float gia = float.Parse(sp.ToList()[i].gia.ToString());
                     string ncc = sp.ToList()[i].ncc.ToString();
                     li.Add(new SanPhamTonTam(masp, tensp, slton, gia, ncc));
-                   
+
                 }
                 gridviewSanPham.DataSource = li.ToList();
                 gridviewSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-               // lblTongTien.Text = 
+                // lblTongTien.Text = 
             }
         }
-        
+
         private void frmLapHoaDon_Load(object sender, EventArgs e)
         {
             PopulateDataGridViewSP();
@@ -83,7 +94,7 @@ namespace BTL_CSharp
                 DataGridViewRow currentRow = gridviewSanPham.CurrentRow;
                 int masp = int.Parse(currentRow.Cells[0].Value + "");
                 // Nối hai bảng SanPham và bảng NCC sau đó lấy ra các cột cần thiết 
-               
+
                 string tenSP = currentRow.Cells[1].Value + "";
                 int slMua = 1;
                 int gia = int.Parse(currentRow.Cells[3].Value + "");
@@ -122,12 +133,16 @@ namespace BTL_CSharp
         {
             using (DBEntites db = new DBEntites())
             {
+                if (gridviewGioHang.DataSource == null)
+                {
+                    return;
+                }
                 listSP = db.SanPhams.ToList<SanPham>();
                 foreach (SanPham s in listSP)
                 {
                     s.SLTon = li[ViTriSPT(s.MaSP)].slton;
                 }
-                foreach(SanPham s in listSP)
+                foreach (SanPham s in listSP)
                 {
                     db.Entry(s).State = System.Data.Entity.EntityState.Modified;
                     db.SaveChanges();
@@ -157,8 +172,8 @@ namespace BTL_CSharp
                 //done
                 MessageBox.Show("Hóa đơn của bạn đã được tạo");
                 Close();
-            } 
-            
+            }
+
 
         }
 
@@ -170,7 +185,7 @@ namespace BTL_CSharp
         private int TonTaiSanPham(SanPhamTam sp, int masp)
         {
             int viTri = -1;
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].MaSP == masp)
                     viTri = i;
@@ -181,7 +196,7 @@ namespace BTL_CSharp
         private int ViTriSPT(int masp)
         {
             int vt = -1;
-            for(int i = 0;i < li.Count; i++)
+            for (int i = 0; i < li.Count; i++)
             {
                 if (li[i].masp == masp)
                     vt = i;
@@ -195,11 +210,11 @@ namespace BTL_CSharp
          */
         private void removeSP(int masp)
         {
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].MaSP == masp)
                 {
-                    if(list[i].SLMua > 1)
+                    if (list[i].SLMua > 1)
                     {
                         list[i].SLMua--;
                         li[ViTriSPT(masp)].slton++;
@@ -231,20 +246,20 @@ namespace BTL_CSharp
         private int SoLuongSP(int masp)
         {
             int sl = 0;
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].MaSP == masp)
                     sl = list[i].SLMua;
             }
             return sl;
-       }
+        }
 
-    /*
-     * Hàm tự động cập nhật số lượng sản phẩm tồn
-     */
+        /*
+         * Hàm tự động cập nhật số lượng sản phẩm tồn
+         */
         private void CapNhatSL(int masp, int sl)
         {
-            for(int i = 0; i < li.Count; i++)
+            for (int i = 0; i < li.Count; i++)
             {
                 if (li[i].masp == masp)
                 {
@@ -261,6 +276,22 @@ namespace BTL_CSharp
                 }
             }
         }
-       
+
+        private void gridviewGioHang_DataSourceChanged(object sender, EventArgs e)
+        {
+            int sum = 0;
+            foreach (SanPhamTam s in list)
+            {
+                sum += s.Gia * s.SLMua;
+            }
+            if (sale)
+            {
+                sum = (sum * 98) / 100;
+            }
+            //format money vietnamese
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            string total = sum.ToString("#,###.###", cul.NumberFormat);
+            lblTongTien.Text = total + "VNĐ";
+        }
     }
 }
