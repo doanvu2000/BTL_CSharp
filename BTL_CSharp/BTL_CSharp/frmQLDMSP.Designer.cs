@@ -69,7 +69,7 @@ namespace BTL_CSharp
             this.dgvSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSanPham.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSanPham.Location = new System.Drawing.Point(37, 208);
+            this.dgvSanPham.Location = new System.Drawing.Point(37, 201);
             this.dgvSanPham.Margin = new System.Windows.Forms.Padding(4);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.Size = new System.Drawing.Size(906, 257);
@@ -90,7 +90,7 @@ namespace BTL_CSharp
             this.panel1.Controls.Add(this.txtMaDM);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(45, 38);
+            this.panel1.Location = new System.Drawing.Point(45, 46);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(976, 249);
@@ -101,7 +101,7 @@ namespace BTL_CSharp
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.Location = new System.Drawing.Point(912, 4);
+            this.btnClose.Location = new System.Drawing.Point(901, 4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(59, 31);
             this.btnClose.TabIndex = 6;
@@ -114,7 +114,7 @@ namespace BTL_CSharp
             this.btnCancel.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancel.Location = new System.Drawing.Point(396, 170);
+            this.btnCancel.Location = new System.Drawing.Point(379, 171);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(90, 34);
             this.btnCancel.TabIndex = 5;
@@ -127,7 +127,7 @@ namespace BTL_CSharp
             this.dgvDanhMuc.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.dgvDanhMuc.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvDanhMuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDanhMuc.Location = new System.Drawing.Point(501, 41);
+            this.dgvDanhMuc.Location = new System.Drawing.Point(485, 41);
             this.dgvDanhMuc.Name = "dgvDanhMuc";
             this.dgvDanhMuc.Size = new System.Drawing.Size(428, 163);
             this.dgvDanhMuc.TabIndex = 3;
@@ -139,7 +139,7 @@ namespace BTL_CSharp
             this.btnXoa.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoa.Location = new System.Drawing.Point(286, 170);
+            this.btnXoa.Location = new System.Drawing.Point(269, 171);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(95, 34);
             this.btnXoa.TabIndex = 4;
@@ -153,7 +153,7 @@ namespace BTL_CSharp
             this.btnSua.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSua.Location = new System.Drawing.Point(165, 170);
+            this.btnSua.Location = new System.Drawing.Point(148, 171);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(95, 34);
             this.btnSua.TabIndex = 3;
@@ -167,7 +167,7 @@ namespace BTL_CSharp
             this.btnThem.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThem.Location = new System.Drawing.Point(37, 170);
+            this.btnThem.Location = new System.Drawing.Point(20, 171);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(95, 34);
             this.btnThem.TabIndex = 2;
@@ -177,7 +177,7 @@ namespace BTL_CSharp
             // 
             // txtTenDM
             // 
-            this.txtTenDM.Location = new System.Drawing.Point(244, 103);
+            this.txtTenDM.Location = new System.Drawing.Point(227, 104);
             this.txtTenDM.Name = "txtTenDM";
             this.txtTenDM.Size = new System.Drawing.Size(189, 22);
             this.txtTenDM.TabIndex = 1;
@@ -185,7 +185,7 @@ namespace BTL_CSharp
             // txtMaDM
             // 
             this.txtMaDM.Enabled = false;
-            this.txtMaDM.Location = new System.Drawing.Point(244, 43);
+            this.txtMaDM.Location = new System.Drawing.Point(227, 44);
             this.txtMaDM.Name = "txtMaDM";
             this.txtMaDM.Size = new System.Drawing.Size(189, 22);
             this.txtMaDM.TabIndex = 1;
@@ -193,7 +193,7 @@ namespace BTL_CSharp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(98, 103);
+            this.label2.Location = new System.Drawing.Point(81, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 16);
             this.label2.TabIndex = 0;
@@ -202,7 +202,7 @@ namespace BTL_CSharp
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(98, 43);
+            this.label1.Location = new System.Drawing.Point(81, 44);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(93, 16);
             this.label1.TabIndex = 0;
@@ -238,9 +238,9 @@ namespace BTL_CSharp
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.dgvSanPham);
             this.panel2.Controls.Add(this.lblDMViewSP);
-            this.panel2.Location = new System.Drawing.Point(45, 308);
+            this.panel2.Location = new System.Drawing.Point(45, 302);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(976, 492);
+            this.panel2.Size = new System.Drawing.Size(976, 478);
             this.panel2.TabIndex = 3;
             // 
             // btnCancelSP
@@ -249,7 +249,7 @@ namespace BTL_CSharp
             this.btnCancelSP.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCancelSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelSP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelSP.Location = new System.Drawing.Point(638, 148);
+            this.btnCancelSP.Location = new System.Drawing.Point(638, 141);
             this.btnCancelSP.Name = "btnCancelSP";
             this.btnCancelSP.Size = new System.Drawing.Size(111, 40);
             this.btnCancelSP.TabIndex = 14;
@@ -263,7 +263,7 @@ namespace BTL_CSharp
             this.btnXoaSP.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnXoaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaSP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoaSP.Location = new System.Drawing.Point(501, 148);
+            this.btnXoaSP.Location = new System.Drawing.Point(501, 141);
             this.btnXoaSP.Name = "btnXoaSP";
             this.btnXoaSP.Size = new System.Drawing.Size(111, 40);
             this.btnXoaSP.TabIndex = 13;
@@ -277,7 +277,7 @@ namespace BTL_CSharp
             this.btnSuaSP.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnSuaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaSP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnSuaSP.Location = new System.Drawing.Point(364, 148);
+            this.btnSuaSP.Location = new System.Drawing.Point(364, 141);
             this.btnSuaSP.Name = "btnSuaSP";
             this.btnSuaSP.Size = new System.Drawing.Size(111, 40);
             this.btnSuaSP.TabIndex = 12;
@@ -291,7 +291,7 @@ namespace BTL_CSharp
             this.btnThemSP.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnThemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemSP.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnThemSP.Location = new System.Drawing.Point(227, 148);
+            this.btnThemSP.Location = new System.Drawing.Point(227, 141);
             this.btnThemSP.Name = "btnThemSP";
             this.btnThemSP.Size = new System.Drawing.Size(111, 40);
             this.btnThemSP.TabIndex = 11;
@@ -387,7 +387,7 @@ namespace BTL_CSharp
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1062, 820);
+            this.ClientSize = new System.Drawing.Size(1062, 781);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
