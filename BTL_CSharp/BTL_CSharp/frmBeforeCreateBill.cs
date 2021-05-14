@@ -36,16 +36,20 @@ namespace BTL_CSharp
                 var kh = db.KhachHangs.Select(s => s).Where(s => s.SDT == sdt).FirstOrDefault();
                 if (kh == null)
                 {
-                    new frmQLKH().ShowDialog();
+                    frmQLKH frmqlkh = new frmQLKH(sdt);
+                    frmqlkh.ShowDialog();
                     List<KhachHang> khs = db.KhachHangs.ToList();
                     KhachHang newKH = khs[khs.Count - 1];
-                    frmLapHoaDon form = new frmLapHoaDon(newKH,tk);                  
-                    form.Show();
+                    frmLapHoaDon form = new frmLapHoaDon(newKH,tk,false);                  
+                    form.ShowDialog();
                     Close();
                 }
                 else
                 {
-
+                    
+                    frmLapHoaDon form = new frmLapHoaDon((KhachHang)kh, tk,true);
+                    form.ShowDialog();
+                    Close();
                 }
             }
         }

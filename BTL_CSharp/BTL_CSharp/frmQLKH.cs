@@ -15,9 +15,15 @@ namespace BTL_CSharp
     {
         DBEntites db = new DBEntites();
         KhachHang kh = new KhachHang();
+        string sdt="";
         public frmQLKH()
         {
             InitializeComponent();
+        }
+        public frmQLKH(string sd)
+        {
+            InitializeComponent();
+            sdt = sd;         
         }
 
         private void frmQLKH_Load(object sender, EventArgs e)
@@ -26,7 +32,7 @@ namespace BTL_CSharp
             setAutoSizeMode(dgvKhachHang);
             clear();
             txtmakh.Enabled = true;
-
+            txtdienthoai.Text = sdt;
         }
         public void setAutoSizeMode(DataGridView dg)
         {

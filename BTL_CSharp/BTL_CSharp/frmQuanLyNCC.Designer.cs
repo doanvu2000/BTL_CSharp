@@ -60,6 +60,8 @@ namespace BTL_CSharp
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
@@ -93,7 +95,7 @@ namespace BTL_CSharp
             this.txtMaNCC.Location = new System.Drawing.Point(169, 38);
             this.txtMaNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(151, 22);
+            this.txtMaNCC.Size = new System.Drawing.Size(181, 22);
             this.txtMaNCC.TabIndex = 3;
             // 
             // txtTenNCC
@@ -101,7 +103,7 @@ namespace BTL_CSharp
             this.txtTenNCC.Location = new System.Drawing.Point(169, 92);
             this.txtTenNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(151, 22);
+            this.txtTenNCC.Size = new System.Drawing.Size(181, 22);
             this.txtTenNCC.TabIndex = 4;
             // 
             // label4
@@ -127,7 +129,7 @@ namespace BTL_CSharp
             this.txtSDT.Location = new System.Drawing.Point(519, 34);
             this.txtSDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(159, 22);
+            this.txtSDT.Size = new System.Drawing.Size(189, 22);
             this.txtSDT.TabIndex = 3;
             // 
             // txtDiaChi
@@ -135,7 +137,7 @@ namespace BTL_CSharp
             this.txtDiaChi.Location = new System.Drawing.Point(519, 95);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(159, 22);
+            this.txtDiaChi.Size = new System.Drawing.Size(189, 22);
             this.txtDiaChi.TabIndex = 4;
             // 
             // panel1
@@ -154,7 +156,7 @@ namespace BTL_CSharp
             this.panel1.Location = new System.Drawing.Point(31, 89);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(763, 235);
+            this.panel1.Size = new System.Drawing.Size(793, 235);
             this.panel1.TabIndex = 5;
             // 
             // btnHuy
@@ -165,7 +167,7 @@ namespace BTL_CSharp
             this.btnHuy.Location = new System.Drawing.Point(493, 169);
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(109, 55);
+            this.btnHuy.Size = new System.Drawing.Size(139, 55);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
@@ -179,7 +181,7 @@ namespace BTL_CSharp
             this.btnXoa.Location = new System.Drawing.Point(292, 169);
             this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(109, 55);
+            this.btnXoa.Size = new System.Drawing.Size(139, 55);
             this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -193,7 +195,7 @@ namespace BTL_CSharp
             this.btnThem.Location = new System.Drawing.Point(81, 169);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(109, 55);
+            this.btnThem.Size = new System.Drawing.Size(139, 55);
             this.btnThem.TabIndex = 6;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -201,6 +203,7 @@ namespace BTL_CSharp
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.btnTraCuu);
             this.panel2.Controls.Add(this.txtTraCuu);
             this.panel2.Controls.Add(this.label6);
@@ -212,6 +215,8 @@ namespace BTL_CSharp
             // 
             // btnTraCuu
             // 
+            this.btnTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTraCuu.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnTraCuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTraCuu.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -226,6 +231,8 @@ namespace BTL_CSharp
             // 
             // txtTraCuu
             // 
+            this.txtTraCuu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtTraCuu.Location = new System.Drawing.Point(53, 78);
             this.txtTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTraCuu.Multiline = true;
@@ -235,6 +242,8 @@ namespace BTL_CSharp
             // 
             // label6
             // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(109, 33);
             this.label6.Name = "label6";
@@ -244,6 +253,8 @@ namespace BTL_CSharp
             // 
             // dgvNCC
             // 
+            this.dgvNCC.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvNCC.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvNCC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

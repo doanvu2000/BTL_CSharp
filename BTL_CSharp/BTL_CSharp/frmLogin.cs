@@ -42,7 +42,7 @@ namespace BTL_CSharp
                     return;
                 }
                 this.Hide();
-                frmMenu f = new frmMenu(user);
+                frmMenuAction f = new frmMenuAction(user);
                 f.Closed += (s, args) => Close();
                 f.Show();
             }
