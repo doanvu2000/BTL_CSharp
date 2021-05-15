@@ -269,6 +269,7 @@ namespace BTL_CSharp
             this.dgvNCC.RowTemplate.Height = 24;
             this.dgvNCC.Size = new System.Drawing.Size(1083, 212);
             this.dgvNCC.TabIndex = 7;
+            this.dgvNCC.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNCC_CellClick);
             this.dgvNCC.DoubleClick += new System.EventHandler(this.dgvNCC_DoubleClick);
             // 
             // MaNCC
