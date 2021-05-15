@@ -185,7 +185,7 @@ namespace BTL_CSharp
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 263F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1106, 263);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1106, 192);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
             // dgvSanPham
@@ -196,7 +196,7 @@ namespace BTL_CSharp
             this.dgvSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSanPham.Location = new System.Drawing.Point(3, 3);
             this.dgvSanPham.Name = "dgvSanPham";
-            this.dgvSanPham.Size = new System.Drawing.Size(1100, 257);
+            this.dgvSanPham.Size = new System.Drawing.Size(1100, 186);
             this.dgvSanPham.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -207,7 +207,7 @@ namespace BTL_CSharp
             this.tableLayoutPanel3.Controls.Add(this.lblMaxProDuct, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblToTal, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 464);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 393);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
