@@ -44,7 +44,7 @@ namespace BTL_CSharp
                  {
                      hd = p,
                      sp = c
-                 }).Where(p=> p.hd.MaHD == MaHD).Select(p => new
+                 }).Where(p => p.hd.MaHD == MaHD).Select(p => new
                  {
                      MaSP = p.hd.MaSP,
                      TenSP = p.sp.TenSP,
@@ -53,7 +53,7 @@ namespace BTL_CSharp
                      ThanhTien = p.hd.SLBan * p.sp.Gia,
                  });
                 dgvChiTietHoaDon.DataSource = ct.ToList();
-                for(int i = 0; i < dgvChiTietHoaDon.ColumnCount; i++)
+                for (int i = 0; i < dgvChiTietHoaDon.ColumnCount; i++)
                 {
                     dgvChiTietHoaDon.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                 }
@@ -65,7 +65,7 @@ namespace BTL_CSharp
                 }
                 CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
                 string total = sum.ToString("#,###.###", cul.NumberFormat);
-                lbTongTien.Text = total + "VNĐ";              
+                lbTongTien.Text = total + "VNĐ";
             }
         }
         void getThongTin(int MaHD)
@@ -92,6 +92,53 @@ namespace BTL_CSharp
 
         private void lbTongTien_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int rowIndex = 1;
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Application.Workbooks.Add(Type.Missing);
+            
+            excelApp.Cells[rowIndex, 1] = "Chi tiết hóa đơn";
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Mã hóa đơn: ";
+            excelApp.Cells[rowIndex, 2] = lbMaHD.Text;
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Ngày bán: ";
+            excelApp.Cells[rowIndex, 2] = lbNgayBan.Text;
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Tên khách hàng: ";
+            excelApp.Cells[rowIndex, 2] = lbTenKH.Text;
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Địa chỉ KH: ";
+            excelApp.Cells[rowIndex, 2] = lbDiaChi.Text;
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Số điện thoại KH: ";
+            excelApp.Cells[rowIndex, 2] = lbSDT.Text;
+            rowIndex++;
+            excelApp.Cells[rowIndex, 1] = "Nhân viên lập HĐ: ";
+            excelApp.Cells[rowIndex, 2] = lbTenNV.Text;
+            rowIndex++;
+            //header table
+            for (int i = 1; i < dgvChiTietHoaDon.Columns.Count + 1; i++)
+            {
+                excelApp.Cells[rowIndex, i] = dgvChiTietHoaDon.Columns[i - 1].HeaderText;
+            }
+            rowIndex++;
+            //data table
+            for (int i = 0; i < dgvChiTietHoaDon.Rows.Count; i++)
+            {
+                for (int j = 0; j < dgvChiTietHoaDon.Columns.Count; j++)
+                {
+
+                    excelApp.Cells[i + rowIndex, j + 1] = dgvChiTietHoaDon.Rows[i].Cells[j].Value.ToString();
+                }
+
+            }
+            excelApp.Columns.AutoFit();
+            excelApp.Visible = true;
 
         }
     }
