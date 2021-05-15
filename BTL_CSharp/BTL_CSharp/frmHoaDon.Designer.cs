@@ -110,7 +110,7 @@ namespace BTL_CSharp
             this.txtDenNgay.Location = new System.Drawing.Point(547, 126);
             this.txtDenNgay.Margin = new System.Windows.Forms.Padding(2);
             this.txtDenNgay.Name = "txtDenNgay";
-            this.txtDenNgay.Size = new System.Drawing.Size(167, 26);
+            this.txtDenNgay.Size = new System.Drawing.Size(191, 26);
             this.txtDenNgay.TabIndex = 3;
             // 
             // dgvHoaDon
@@ -124,7 +124,7 @@ namespace BTL_CSharp
             this.dgvHoaDon.Name = "dgvHoaDon";
             this.dgvHoaDon.RowHeadersWidth = 51;
             this.dgvHoaDon.RowTemplate.Height = 24;
-            this.dgvHoaDon.Size = new System.Drawing.Size(663, 232);
+            this.dgvHoaDon.Size = new System.Drawing.Size(687, 232);
             this.dgvHoaDon.TabIndex = 5;
             this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
@@ -134,7 +134,7 @@ namespace BTL_CSharp
             this.btnXemHD.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnXemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXemHD.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXemHD.Location = new System.Drawing.Point(790, 298);
+            this.btnXemHD.Location = new System.Drawing.Point(814, 221);
             this.btnXemHD.Margin = new System.Windows.Forms.Padding(2);
             this.btnXemHD.Name = "btnXemHD";
             this.btnXemHD.Size = new System.Drawing.Size(93, 63);
@@ -148,7 +148,7 @@ namespace BTL_CSharp
             this.btnXoaDH.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnXoaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaDH.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoaDH.Location = new System.Drawing.Point(790, 390);
+            this.btnXoaDH.Location = new System.Drawing.Point(814, 305);
             this.btnXoaDH.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoaDH.Name = "btnXoaDH";
             this.btnXoaDH.Size = new System.Drawing.Size(93, 63);
@@ -163,7 +163,7 @@ namespace BTL_CSharp
             this.btnLoc.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLoc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoc.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnLoc.Location = new System.Drawing.Point(790, 221);
+            this.btnLoc.Location = new System.Drawing.Point(814, 152);
             this.btnLoc.Margin = new System.Windows.Forms.Padding(2);
             this.btnLoc.Name = "btnLoc";
             this.btnLoc.Size = new System.Drawing.Size(93, 37);
@@ -177,7 +177,7 @@ namespace BTL_CSharp
             this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnClose.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClose.BackgroundImage")));
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.Location = new System.Drawing.Point(824, 39);
+            this.btnClose.Location = new System.Drawing.Point(848, 39);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(59, 31);
             this.btnClose.TabIndex = 8;
@@ -189,7 +189,7 @@ namespace BTL_CSharp
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(1026, 609);
+            this.ClientSize = new System.Drawing.Size(1050, 612);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnXoaDH);
