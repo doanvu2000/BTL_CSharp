@@ -37,13 +37,11 @@ namespace BTL_CSharp
             this.tabQLNV = new System.Windows.Forms.TabPage();
             this.tabQLKH = new System.Windows.Forms.TabPage();
             this.tabCreateBill = new System.Windows.Forms.TabPage();
+            this.tabStatistic = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
-            this.tabStatistic = new System.Windows.Forms.TabPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabStatistic.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -64,6 +62,7 @@ namespace BTL_CSharp
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1584, 861);
             this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // tabControl1
             // 
@@ -140,6 +139,15 @@ namespace BTL_CSharp
             this.tabCreateBill.Text = "Lập hóa đơn";
             this.tabCreateBill.UseVisualStyleBackColor = true;
             // 
+            // tabStatistic
+            // 
+            this.tabStatistic.Location = new System.Drawing.Point(4, 29);
+            this.tabStatistic.Name = "tabStatistic";
+            this.tabStatistic.Size = new System.Drawing.Size(1570, 737);
+            this.tabStatistic.TabIndex = 6;
+            this.tabStatistic.Text = "Thống kê";
+            this.tabStatistic.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -165,29 +173,7 @@ namespace BTL_CSharp
             this.lblWelcome.Size = new System.Drawing.Size(1571, 24);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Xin chào";
-            // 
-            // tabStatistic
-            // 
-            this.tabStatistic.Controls.Add(this.label2);
-            this.tabStatistic.Location = new System.Drawing.Point(4, 29);
-            this.tabStatistic.Name = "tabStatistic";
-            this.tabStatistic.Size = new System.Drawing.Size(1570, 737);
-            this.tabStatistic.TabIndex = 6;
-            this.tabStatistic.Text = "Thống kê";
-            this.tabStatistic.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(414, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(617, 55);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Chức năng đang phát triển";
+            this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
             // 
             // frmMenuAction
             // 
@@ -201,12 +187,11 @@ namespace BTL_CSharp
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMenuAction";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMenuAction_FormClosed);
             this.Load += new System.EventHandler(this.frmMenuAction_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tabStatistic.ResumeLayout(false);
-            this.tabStatistic.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -224,6 +209,5 @@ namespace BTL_CSharp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.TabPage tabStatistic;
-        private System.Windows.Forms.Label label2;
     }
 }

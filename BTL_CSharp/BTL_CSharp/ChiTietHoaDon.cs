@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -62,8 +63,9 @@ namespace BTL_CSharp
                     DataGridViewRow row = dgvChiTietHoaDon.Rows[i];
                     sum += int.Parse(row.Cells[4].Value + "");
                 }
-                lbTongTien.Text = sum + "";
-                
+                CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+                string total = sum.ToString("#,###.###", cul.NumberFormat);
+                lbTongTien.Text = total + "VNĐ";              
             }
         }
         void getThongTin(int MaHD)
@@ -86,6 +88,11 @@ namespace BTL_CSharp
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void lbTongTien_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

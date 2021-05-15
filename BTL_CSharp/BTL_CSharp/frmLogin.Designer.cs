@@ -112,21 +112,21 @@ namespace BTL_CSharp
             this.lblForgotPassWord.Location = new System.Drawing.Point(340, 9);
             this.lblForgotPassWord.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblForgotPassWord.Name = "lblForgotPassWord";
-            this.lblForgotPassWord.Size = new System.Drawing.Size(126, 17);
+            this.lblForgotPassWord.Size = new System.Drawing.Size(0, 17);
             this.lblForgotPassWord.TabIndex = 1;
-            this.lblForgotPassWord.Text = "Forgot PassWord?";
             // 
             // chkRemember
             // 
             this.chkRemember.AutoSize = true;
-            this.chkRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkRemember.Location = new System.Drawing.Point(160, 9);
+            this.chkRemember.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkRemember.Location = new System.Drawing.Point(185, 9);
             this.chkRemember.Margin = new System.Windows.Forms.Padding(2);
             this.chkRemember.Name = "chkRemember";
-            this.chkRemember.Size = new System.Drawing.Size(119, 21);
+            this.chkRemember.Size = new System.Drawing.Size(177, 28);
             this.chkRemember.TabIndex = 0;
-            this.chkRemember.Text = "Remember me";
+            this.chkRemember.Text = "Show Password";
             this.chkRemember.UseVisualStyleBackColor = true;
+            this.chkRemember.CheckedChanged += new System.EventHandler(this.chkRemember_CheckedChanged);
             // 
             // label3
             // 

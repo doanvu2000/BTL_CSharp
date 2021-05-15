@@ -21,6 +21,8 @@
         <AssociationConnector Association="QLCHModel.FK__SanPham__MaNCC__34C8D9D1" ManuallyRouted="false" />
         <EntityTypeShape EntityType="QLCHModel.sysdiagram" Width="1.5" PointX="5.375" PointY="4.75" />
         <AssociationConnector Association="QLCHModel.fk_tk" />
+        <AssociationConnector Association="QLCHModel.fk_tk" />
+        <AssociationConnector Association="QLCHModel.fk_tkhoan" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

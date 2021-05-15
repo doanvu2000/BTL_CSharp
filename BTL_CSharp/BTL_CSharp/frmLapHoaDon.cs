@@ -29,6 +29,13 @@ namespace BTL_CSharp
             InitializeComponent();
             kh = k;
             tk = t;
+            DBEntites db = new DBEntites();
+
+            int manv = tk.NhanVien.MaNV;
+            var nv = db.NhanViens.Where(s => s.MaNV == manv).Select(s => s).FirstOrDefault();
+            lblNhanVien.Text = "Nhân viên tạo hóa đơn: " + nv.TenNV;
+
+
             sale = isSale;
             lblKhachHang.Text = "Khách hàng: " + kh.TenKH + "               SĐT: " + kh.SDT;
 
@@ -37,8 +44,6 @@ namespace BTL_CSharp
                 lblSale.Text = "Đã mua hàng ít nhất 1 lần, được giảm 2% hóa đơn";
             }
             else lblSale.Text = "";
-            lblNhanVien.Text = "Nhân viên tạo hóa đơn: " + t.UserName;
-            
         }
         void PopulateDataGridViewSP()
         {
