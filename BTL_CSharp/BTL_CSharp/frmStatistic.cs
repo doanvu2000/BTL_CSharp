@@ -19,17 +19,9 @@ namespace BTL_CSharp
         }
         DBEntites db = new DBEntites();
         List<SanPhamTam> list = new List<SanPhamTam>();
+        DateTime start, end;
         private void frmStatistic_Load(object sender, EventArgs e)
         {
-            //var sp = db.SanPhams.Select(ss => new
-            //{
-            //    MaSP = ss.MaSP,
-            //    TenSP = ss.TenSP,
-            //    SlTon = ss.SLTon,
-            //    Gia = ss.Gia
-            //});
-
-            //dgvSanPham.DataSource = sp.ToList();
         }
         public List<SanPhamTam> GetAllSanPhamByDate(DateTime dateStart, DateTime dateEnd)
         {
@@ -107,6 +99,7 @@ namespace BTL_CSharp
         private void btnOneDay_Click(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
+            start = end = now;
             list = GetAllSanPhamByDate(now, now);
             setInformation();
             list.Sort((x, y) => { return x.SLMua - y.SLMua; });
@@ -130,6 +123,8 @@ namespace BTL_CSharp
         {
             DateTime timeBegin = dateTimeBegin.Value;
             DateTime timeEnd = dateTimeEnd.Value;
+            start = timeBegin;
+            end = timeEnd;
             if (timeBegin.CompareTo(timeEnd) >= 0)
             {
                 MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc!", "Cảnh báo",
@@ -150,12 +145,73 @@ namespace BTL_CSharp
             var month = new DateTime(today.Year, today.Month, 1);
             var first = month.AddMonths(-1);
             var last = month.AddDays(-1);
+            start = first;
+            end = last;
             list = GetAllSanPhamByDate(first, last);
             setInformation();
             list.Sort((y, x) => { return x.SLMua - y.SLMua; });
             dgvSanPham.DataSource = null;
             dgvSanPham.DataSource = list;
             dgvSanPham.Columns.RemoveAt(4);
+        }
+        public void exportExcelFile()
+        {
+            int rowIndex = 1;
+            Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+            excelApp.Application.Workbooks.Add(Type.Missing);
+
+            excelApp.Cells[rowIndex, 1] = "BÁO CÁO DOANH THU";
+            rowIndex++;
+            if (DateTime.Compare(start, end) != 0)
+            {
+                excelApp.Cells[rowIndex, 1] = "Thời gian bắt đầu: ";
+                excelApp.Cells[rowIndex, 2] = start.ToShortDateString();
+                rowIndex++;
+                excelApp.Cells[rowIndex, 1] = "Thời gian kết thúc: ";
+                excelApp.Cells[rowIndex, 2] = end.ToShortDateString();
+                rowIndex++;
+            }
+            else
+            {
+                excelApp.Cells[rowIndex, 1] = "Thời gian bán: ";
+                excelApp.Cells[rowIndex, 2] = start.ToShortDateString();
+                rowIndex++;
+            }
+
+            rowIndex++;
+            //header table
+            excelApp.Cells[rowIndex, 2] = "STT";
+            for (int i = 1; i < dgvSanPham.Columns.Count + 1; i++)
+            {
+                excelApp.Cells[rowIndex, i+2] = dgvSanPham.Columns[i - 1].HeaderText;
+            }
+            rowIndex++;
+            //data table
+            int count = 1;
+            for (int i = 0; i < dgvSanPham.Rows.Count; i++)
+            {
+                excelApp.Cells[i + rowIndex,  2] = count;
+                for (int j = 0; j < dgvSanPham.Columns.Count; j++)
+                {   
+                    excelApp.Cells[i + rowIndex, j + 3] = dgvSanPham.Rows[i].Cells[j].Value+"";
+                }
+                count++;
+
+            }
+            rowIndex += count+2;
+            excelApp.Cells[rowIndex, 1] = lblToTal.Text;
+            rowIndex += 2;
+            excelApp.Cells[rowIndex, 1] = lblMaxProDuct.Text;
+            rowIndex += 2;
+            excelApp.Cells[rowIndex, 1] = lblMinProDuct.Text;
+            rowIndex++;
+
+            excelApp.Columns.AutoFit();
+            excelApp.Visible = true;
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            exportExcelFile();
         }
     }
 }

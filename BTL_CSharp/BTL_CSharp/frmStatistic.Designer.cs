@@ -44,6 +44,7 @@ namespace BTL_CSharp
             this.lblMinProDuct = new System.Windows.Forms.Label();
             this.lblMaxProDuct = new System.Windows.Forms.Label();
             this.lblToTal = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tablePanel2.SuspendLayout();
             this.tablePanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -147,6 +148,7 @@ namespace BTL_CSharp
             this.tablePanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tablePanel1.Controls.Add(this.dateTimeBegin, 1, 0);
             this.tablePanel1.Controls.Add(this.dateTimeEnd, 3, 0);
+            this.tablePanel1.Controls.Add(this.button1, 0, 0);
             this.tablePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tablePanel1.Location = new System.Drawing.Point(0, 71);
             this.tablePanel1.Name = "tablePanel1";
@@ -184,7 +186,7 @@ namespace BTL_CSharp
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 263F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 192F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1106, 192);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
@@ -255,6 +257,20 @@ namespace BTL_CSharp
             this.lblToTal.TabIndex = 0;
             this.lblToTal.Text = "Doanh thu: ";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(215, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Export Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmStatistic
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -301,5 +317,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.Label lblMinProDuct;
         private System.Windows.Forms.Label lblMaxProDuct;
         private System.Windows.Forms.Label lblToTal;
+        private System.Windows.Forms.Button button1;
     }
 }
