@@ -41,9 +41,9 @@ namespace BTL_CSharp
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.lblToTal = new System.Windows.Forms.Label();
-            this.lblMaxProDuct = new System.Windows.Forms.Label();
             this.lblMinProDuct = new System.Windows.Forms.Label();
+            this.lblMaxProDuct = new System.Windows.Forms.Label();
+            this.lblToTal = new System.Windows.Forms.Label();
             this.tablePanel2.SuspendLayout();
             this.tablePanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -179,12 +179,12 @@ namespace BTL_CSharp
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Controls.Add(this.dgvSanPham, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 393);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 201);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1106, 263);
             this.tableLayoutPanel2.TabIndex = 8;
             // 
@@ -207,7 +207,7 @@ namespace BTL_CSharp
             this.tableLayoutPanel3.Controls.Add(this.lblMaxProDuct, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.lblToTal, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 201);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 464);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33F));
@@ -216,18 +216,18 @@ namespace BTL_CSharp
             this.tableLayoutPanel3.Size = new System.Drawing.Size(1106, 174);
             this.tableLayoutPanel3.TabIndex = 9;
             // 
-            // lblToTal
+            // lblMinProDuct
             // 
-            this.lblToTal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblMinProDuct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblToTal.AutoSize = true;
-            this.lblToTal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblToTal.Location = new System.Drawing.Point(30, 0);
-            this.lblToTal.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.lblToTal.Name = "lblToTal";
-            this.lblToTal.Size = new System.Drawing.Size(118, 57);
-            this.lblToTal.TabIndex = 0;
-            this.lblToTal.Text = "Doanh thu: ";
+            this.lblMinProDuct.AutoSize = true;
+            this.lblMinProDuct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinProDuct.Location = new System.Drawing.Point(30, 114);
+            this.lblMinProDuct.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblMinProDuct.Name = "lblMinProDuct";
+            this.lblMinProDuct.Size = new System.Drawing.Size(219, 60);
+            this.lblMinProDuct.TabIndex = 2;
+            this.lblMinProDuct.Text = "Sản phẩm bán ít nhất: ";
             // 
             // lblMaxProDuct
             // 
@@ -242,18 +242,18 @@ namespace BTL_CSharp
             this.lblMaxProDuct.TabIndex = 1;
             this.lblMaxProDuct.Text = "Sản phẩm bán chạy nhất: ";
             // 
-            // lblMinProDuct
+            // lblToTal
             // 
-            this.lblMinProDuct.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lblToTal.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblMinProDuct.AutoSize = true;
-            this.lblMinProDuct.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinProDuct.Location = new System.Drawing.Point(30, 114);
-            this.lblMinProDuct.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
-            this.lblMinProDuct.Name = "lblMinProDuct";
-            this.lblMinProDuct.Size = new System.Drawing.Size(219, 60);
-            this.lblMinProDuct.TabIndex = 2;
-            this.lblMinProDuct.Text = "Sản phẩm bán ít nhất: ";
+            this.lblToTal.AutoSize = true;
+            this.lblToTal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblToTal.Location = new System.Drawing.Point(30, 0);
+            this.lblToTal.Margin = new System.Windows.Forms.Padding(30, 0, 3, 0);
+            this.lblToTal.Name = "lblToTal";
+            this.lblToTal.Size = new System.Drawing.Size(118, 57);
+            this.lblToTal.TabIndex = 0;
+            this.lblToTal.Text = "Doanh thu: ";
             // 
             // frmStatistic
             // 

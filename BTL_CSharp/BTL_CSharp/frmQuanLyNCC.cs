@@ -134,5 +134,14 @@ namespace BTL_CSharp
         {
             Close();
         }
+
+        private void dgvNCC_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow viewRow = dgvNCC.CurrentRow;
+            txtMaNCC.Text = viewRow.Cells[0].Value + "";
+            txtTenNCC.Text = viewRow.Cells[1].Value + "";
+            txtSDT.Text = viewRow.Cells[2].Value + "";
+            txtDiaChi.Text = viewRow.Cells[3].Value + "";
+        }
     }
 }
