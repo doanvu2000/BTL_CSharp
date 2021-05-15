@@ -203,4 +203,4 @@ Alter table taikhoan
  ALTER TABLE TaiKhoan
 ADD constraint fk_tkhoan foreign key (manv) references NhanVien(manv)
 go
-insert into TaiKhoan values('admin','12345',1,2), ('LanNguyen','12345',2,1), ('NgocHung','12345',2,4)
+insert into TaiKhoan values('admin','12345',1,2), ('LanNguyen','12345',2,1), ('NgocHung','12345',2,4), ('1','1',2,3)

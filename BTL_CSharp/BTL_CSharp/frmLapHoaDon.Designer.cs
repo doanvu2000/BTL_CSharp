@@ -48,7 +48,7 @@ namespace BTL_CSharp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(515, 41);
+            this.label1.Location = new System.Drawing.Point(512, 27);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 31);
             this.label1.TabIndex = 0;
@@ -58,7 +58,7 @@ namespace BTL_CSharp
             // 
             this.gridviewSanPham.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.gridviewSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewSanPham.Location = new System.Drawing.Point(123, 183);
+            this.gridviewSanPham.Location = new System.Drawing.Point(124, 231);
             this.gridviewSanPham.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridviewSanPham.Name = "gridviewSanPham";
             this.gridviewSanPham.RowHeadersWidth = 51;
@@ -71,7 +71,7 @@ namespace BTL_CSharp
             // 
             this.gridviewGioHang.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.gridviewGioHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridviewGioHang.Location = new System.Drawing.Point(124, 396);
+            this.gridviewGioHang.Location = new System.Drawing.Point(124, 453);
             this.gridviewGioHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.gridviewGioHang.Name = "gridviewGioHang";
             this.gridviewGioHang.RowHeadersWidth = 51;
@@ -87,7 +87,7 @@ namespace BTL_CSharp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(653, 626);
+            this.label2.Location = new System.Drawing.Point(652, 669);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 24);
             this.label2.TabIndex = 3;
@@ -100,7 +100,7 @@ namespace BTL_CSharp
             this.lblTongTien.AutoSize = true;
             this.lblTongTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.lblTongTien.Location = new System.Drawing.Point(771, 626);
+            this.lblTongTien.Location = new System.Drawing.Point(770, 669);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.Size = new System.Drawing.Size(20, 24);
             this.lblTongTien.TabIndex = 4;
@@ -110,7 +110,7 @@ namespace BTL_CSharp
             // 
             this.btnLuu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLuu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuu.Location = new System.Drawing.Point(949, 608);
+            this.btnLuu.Location = new System.Drawing.Point(948, 651);
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(136, 57);
@@ -124,7 +124,7 @@ namespace BTL_CSharp
             this.lblNhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblNhanVien.AutoSize = true;
             this.lblNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNhanVien.Location = new System.Drawing.Point(121, 674);
+            this.lblNhanVien.Location = new System.Drawing.Point(120, 717);
             this.lblNhanVien.Name = "lblNhanVien";
             this.lblNhanVien.Size = new System.Drawing.Size(94, 20);
             this.lblNhanVien.TabIndex = 8;

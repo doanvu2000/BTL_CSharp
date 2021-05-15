@@ -12,15 +12,12 @@ namespace BTL_CSharp
     using System;
     using System.Collections.Generic;
     
-    public partial class TaiKhoan
+    public partial class sysdiagram
     {
-        public int ID { get; set; }
-        public string UserName { get; set; }
-        public string PassWord { get; set; }
-        public Nullable<int> Role { get; set; }
-        public Nullable<int> manv { get; set; }
-    
-        public virtual NhanVien NhanVien { get; set; }
-        public virtual NhanVien NhanVien1 { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

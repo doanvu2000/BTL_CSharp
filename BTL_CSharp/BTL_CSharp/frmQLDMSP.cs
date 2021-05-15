@@ -26,6 +26,7 @@ namespace BTL_CSharp
             HienThiDanhMuc();
             setAutoSizeMode(dgvDanhMuc);
             var ncc = db.NCCs.Select(x => new { x.TenNCC }).ToList();
+            cblNCC.DataSource = null;
             cblNCC.DataSource = ncc;
             cblNCC.DisplayMember = "TenNCC";
         }

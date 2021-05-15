@@ -13,12 +13,12 @@ namespace BTL_CSharp
 {
     public partial class frmMenuAction : Form
     {
-        public  TaiKhoan user;
+        public TaiKhoan user;
         public frmMenuAction()
         {
             InitializeComponent();
         }
-         public frmMenuAction(TaiKhoan x)
+        public frmMenuAction(TaiKhoan x)
         {
             InitializeComponent();
             user = x;
@@ -33,14 +33,20 @@ namespace BTL_CSharp
             }
             else
             {
-                role = "nhân viên";               
+                role = "nhân viên";
+                tabControl1.Controls.Remove(tabControl1.TabPages[3]);
             }
-            lblWelcome.Text = "Xin chào " + user.UserName + ", Chức vụ: " + role;
+            DBEntites db = new DBEntites();
+            int manv = user.NhanVien.MaNV;
+            var nv = db.NhanViens.Where(s => s.MaNV == manv).Select(s => s).FirstOrDefault();
+            lblWelcome.Text = "Xin chào " + nv.TenNV + ", Chức vụ: " + role;
             checkTab(tabControl1.SelectedIndex);
         }
         public void checkTab(int index)
         {
-            if (index == 0)
+            string tabName = tabControl1.TabPages[index].Name;
+
+            if (tabName == "tabQLDMSP")
             {//QLDM
                 frmQLDMSP frm = new frmQLDMSP();
                 frm.TopLevel = false; // set parent != desktop
@@ -49,7 +55,7 @@ namespace BTL_CSharp
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
             }
-            else if (index == 1)
+            else if (tabName == "tabQLHD")
             {//QLHD
                 frmHoaDon frm = new frmHoaDon();
                 frm.TopLevel = false; // set parent != desktop
@@ -58,7 +64,7 @@ namespace BTL_CSharp
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
             }
-            else if (index == 2)
+            else if (tabName == "tabQLNCC")
             {//QLNCC
                 frmQuanLyNCC frm = new frmQuanLyNCC();
                 frm.TopLevel = false; // set parent != desktop
@@ -67,7 +73,7 @@ namespace BTL_CSharp
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
             }
-            else if (index == 3)
+            else if (tabName == "tabQLNV")
             {//QLNV
                 frmQLNV frm = new frmQLNV();
                 frm.TopLevel = false; // set parent != desktop
@@ -76,7 +82,7 @@ namespace BTL_CSharp
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
             }
-            else if (index == 4)
+            else if (tabName == "tabQLKH")
             {//QLKH
                 frmQLKH frm = new frmQLKH();
                 frm.TopLevel = false; // set parent != desktop
@@ -85,17 +91,23 @@ namespace BTL_CSharp
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
             }
-            else if (index == 5)
+            else if (tabName == "tabCreateBill")
             {//Create Bill
-                frmBeforeCreateBill frm = new frmBeforeCreateBill();
+                frmBeforeCreateBill frm = new frmBeforeCreateBill(user);
                 frm.TopLevel = false; // set parent != desktop
                 frm.Dock = DockStyle.Fill;
                 frm.FormBorderStyle = FormBorderStyle.None;
                 frm.Parent = tabControl1.SelectedTab;
                 frm.Show();
-            }else
+            }
+            else if (tabName == "tabStatistic")
             {//frmStatistic
-
+                frmStatistic frm = new frmStatistic();
+                frm.TopLevel = false; // set parent != desktop
+                frm.Dock = DockStyle.Fill;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Parent = tabControl1.SelectedTab;
+                frm.Show();
             }
         }
 
@@ -103,6 +115,22 @@ namespace BTL_CSharp
         {
             int index = tabControl1.SelectedIndex;
             checkTab(index);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMenuAction_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Close();
+
         }
     }
 }

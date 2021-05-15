@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BTL_CSharp
 {
-    class SanPhamTam
+    public class SanPhamTam
     {
         public int MaSP { get; set; }
         public string TenSP { get; set; }
@@ -25,6 +25,13 @@ namespace BTL_CSharp
             this.SLMua = SLMua;
             this.Gia = Gia;
             this.TenNCC = TenNCC;
+        }
+        public SanPhamTam(int MaSP, string TenSP,  int Gia, int SLMua)
+        {
+            this.MaSP = MaSP;
+            this.TenSP = TenSP;
+            this.SLMua = SLMua;
+            this.Gia = Gia;
         }
     }
 }

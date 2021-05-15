@@ -18,6 +18,8 @@ namespace BTL_CSharp
         public NhanVien()
         {
             this.HoaDons = new HashSet<HoaDon>();
+            this.TaiKhoans = new HashSet<TaiKhoan>();
+            this.TaiKhoans1 = new HashSet<TaiKhoan>();
         }
     
         public int MaNV { get; set; }
@@ -28,5 +30,9 @@ namespace BTL_CSharp
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HoaDon> HoaDons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiKhoan> TaiKhoans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TaiKhoan> TaiKhoans1 { get; set; }
     }
 }

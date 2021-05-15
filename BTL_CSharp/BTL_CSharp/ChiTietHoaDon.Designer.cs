@@ -59,9 +59,9 @@ namespace BTL_CSharp
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(385, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 31);
+            this.label1.Size = new System.Drawing.Size(279, 31);
             this.label1.TabIndex = 0;
-            this.label1.Text = "QUẢN LÝ HÓA ĐƠN";
+            this.label1.Text = "CHI TIẾT HÓA ĐƠN";
             // 
             // label2
             // 
@@ -217,6 +217,7 @@ namespace BTL_CSharp
             this.lbTongTien.Size = new System.Drawing.Size(31, 16);
             this.lbTongTien.TabIndex = 5;
             this.lbTongTien.Text = "abc";
+            this.lbTongTien.Click += new System.EventHandler(this.lbTongTien_Click);
             // 
             // btnClose
             // 
@@ -259,6 +260,7 @@ namespace BTL_CSharp
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ChiTietHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChiTietHoaDon";
             this.Load += new System.EventHandler(this.ChiTietHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();

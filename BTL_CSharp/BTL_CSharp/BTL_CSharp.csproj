@@ -142,6 +142,12 @@
     <Compile Include="frmQuanLyNCC.Designer.cs">
       <DependentUpon>frmQuanLyNCC.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStatistic.Designer.cs">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoaDon.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
@@ -161,6 +167,9 @@
     </Compile>
     <Compile Include="SanPhamTam.cs" />
     <Compile Include="SanPhamTonTam.cs" />
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>DataModels.tt</DependentUpon>
+    </Compile>
     <Compile Include="TaiKhoan.cs">
       <DependentUpon>DataModels.tt</DependentUpon>
     </Compile>
@@ -196,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyNCC.resx">
       <DependentUpon>frmQuanLyNCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStatistic.resx">
+      <DependentUpon>frmStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

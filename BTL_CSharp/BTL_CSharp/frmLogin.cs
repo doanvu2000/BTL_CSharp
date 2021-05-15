@@ -43,8 +43,11 @@ namespace BTL_CSharp
                 }
                 this.Hide();
                 frmMenuAction f = new frmMenuAction(user);
-                f.Closed += (s, args) => Close();
-                f.Show();
+                //f.Closed += (s, args) => Close();
+                f.ShowDialog();
+                this.Show();
+                txtPassWord.Text = "";
+                ActiveControl = txtUserName;
             }
         }
 
@@ -72,6 +75,20 @@ namespace BTL_CSharp
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void chkRemember_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkRemember.Checked == true)
+            {
+                chkRemember.Text = "Hide Password";
+                txtPassWord.PasswordChar = '\0';
+            }
+            else
+            {
+                chkRemember.Text = "Show Password";
+                txtPassWord.PasswordChar = '*';
+            }
         }
     }
 
