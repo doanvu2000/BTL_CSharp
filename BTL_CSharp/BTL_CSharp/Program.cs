@@ -17,7 +17,8 @@ namespace BTL_CSharp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmLogin());
-            // Application.Run(new frmStatistic());
+            //Application.Run(new frmQLTK());
+            
 
         }
     }

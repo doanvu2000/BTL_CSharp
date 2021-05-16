@@ -63,6 +63,10 @@ namespace BTL_CSharp
                     DataGridViewRow row = dgvChiTietHoaDon.Rows[i];
                     sum += int.Parse(row.Cells[4].Value + "");
                 }
+                var nv = db.HoaDons.Where(s => s.MaHD == MaHD).FirstOrDefault();
+                lbMaHD.Text = nv.MaHD + "";
+                var rs = db.NhanViens.Where(s => s.MaNV == nv.MaNV).FirstOrDefault();
+                lbTenNV.Text = rs.TenNV;
                 CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
                 string total = sum.ToString("#,###.###", cul.NumberFormat);
                 lbTongTien.Text = total + "VNĐ";

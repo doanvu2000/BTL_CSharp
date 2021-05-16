@@ -25,7 +25,6 @@ namespace BTL_CSharp
         }
         public List<SanPhamTam> GetAllSanPhamByDate(DateTime dateStart, DateTime dateEnd)
         {
-
             List<SanPhamTam> ls = new List<SanPhamTam>();
             var hd = db.HoaDons.Select(s => s);
             foreach (var s in hd)
@@ -68,6 +67,7 @@ namespace BTL_CSharp
             if (list.Count <= 0)
             {
                 lblToTal.Text = "Tổng doanh thu: 0 VNĐ";
+                lblMaxProDuct.Text = lblMinProDuct.Text = "";
                 return;
             }
             int sum = 0;
@@ -98,7 +98,7 @@ namespace BTL_CSharp
 
         private void btnOneDay_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
+            DateTime now = DateTime.Today;
             start = end = now;
             list = GetAllSanPhamByDate(now, now);
             setInformation();

@@ -104,7 +104,7 @@ namespace BTL_CSharp
         private void dgvHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow viewRow = dgvHoaDon.CurrentRow;
-            int ma = int.Parse(viewRow.Cells["MaHD"].Value + "");
+            int ma = int.Parse(viewRow.Cells[0].Value + "");
             ChiTietHoaDon ss = new ChiTietHoaDon(ma);
             ss.Show();
         }

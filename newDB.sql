@@ -204,3 +204,5 @@ Alter table taikhoan
 ADD constraint fk_tkhoan foreign key (manv) references NhanVien(manv)
 go
 insert into TaiKhoan values('admin','12345',1,2), ('LanNguyen','12345',2,1), ('NgocHung','12345',2,4), ('1','1',2,3)
+select * from NhanVien
+insert into NhanVien(TenNV,SDT ,DiaChi,Luong) values	(N'Nguyễn Ngọc Nam','0963377272','Ha Noi',9000000)
