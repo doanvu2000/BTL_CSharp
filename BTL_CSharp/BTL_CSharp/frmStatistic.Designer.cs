@@ -37,6 +37,7 @@ namespace BTL_CSharp
             this.dateTimeBegin = new System.Windows.Forms.DateTimePicker();
             this.dateTimeEnd = new System.Windows.Forms.DateTimePicker();
             this.tablePanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
@@ -44,7 +45,6 @@ namespace BTL_CSharp
             this.lblMinProDuct = new System.Windows.Forms.Label();
             this.lblMaxProDuct = new System.Windows.Forms.Label();
             this.lblToTal = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.tablePanel2.SuspendLayout();
             this.tablePanel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -157,6 +157,20 @@ namespace BTL_CSharp
             this.tablePanel1.Size = new System.Drawing.Size(1106, 45);
             this.tablePanel1.TabIndex = 1;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(215, 39);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Export Excel";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -256,20 +270,6 @@ namespace BTL_CSharp
             this.lblToTal.Size = new System.Drawing.Size(118, 57);
             this.lblToTal.TabIndex = 0;
             this.lblToTal.Text = "Doanh thu: ";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Highlight;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(215, 39);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Export Excel";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmStatistic
             // 

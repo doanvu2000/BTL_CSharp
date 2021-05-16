@@ -154,10 +154,10 @@ namespace BTL_CSharp
                 }
 
                 HoaDon new_HD = new HoaDon();
-                new_HD.NgayLap = DateTime.Now;
+                new_HD.NgayLap = DateTime.Today;
                 //fix
-                new_HD.MaKH = kh.MaKH;
-                new_HD.MaNV = 1;
+                new_HD.MaKH = kh.MaKH;               
+                new_HD.MaNV = (int)tk.manv;
                 //----
                 //add HoaDon
                 db.HoaDons.Add(new_HD);

@@ -34,7 +34,8 @@ namespace BTL_CSharp
             else
             {
                 role = "nhân viên";
-                tabControl1.Controls.Remove(tabControl1.TabPages[3]);
+                tabControl1.Controls.Remove(tabControl1.TabPages["tabQLNV"]);
+                tabControl1.Controls.Remove(tabControl1.TabPages["tabQLTK"]);
             }
             DBEntites db = new DBEntites();
             int manv = user.NhanVien.MaNV;
@@ -103,6 +104,15 @@ namespace BTL_CSharp
             else if (tabName == "tabStatistic")
             {//frmStatistic
                 frmStatistic frm = new frmStatistic();
+                frm.TopLevel = false; // set parent != desktop
+                frm.Dock = DockStyle.Fill;
+                frm.FormBorderStyle = FormBorderStyle.None;
+                frm.Parent = tabControl1.SelectedTab;
+                frm.Show();
+            }
+            else if (tabName == "tabQLTK")
+            {//frmStatistic
+                frmQLTK frm = new frmQLTK();
                 frm.TopLevel = false; // set parent != desktop
                 frm.Dock = DockStyle.Fill;
                 frm.FormBorderStyle = FormBorderStyle.None;

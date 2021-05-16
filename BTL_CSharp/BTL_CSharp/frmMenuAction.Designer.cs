@@ -40,6 +40,7 @@ namespace BTL_CSharp
             this.tabStatistic = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.lblWelcome = new System.Windows.Forms.Label();
+            this.tabQLTK = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -69,13 +70,14 @@ namespace BTL_CSharp
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Controls.Add(this.tabStatistic);
+            this.tabControl1.Controls.Add(this.tabCreateBill);
+            this.tabControl1.Controls.Add(this.tabQLTK);
             this.tabControl1.Controls.Add(this.tabQLDMSP);
             this.tabControl1.Controls.Add(this.tabQLHD);
             this.tabControl1.Controls.Add(this.tabQLNCC);
             this.tabControl1.Controls.Add(this.tabQLNV);
             this.tabControl1.Controls.Add(this.tabQLKH);
-            this.tabControl1.Controls.Add(this.tabCreateBill);
-            this.tabControl1.Controls.Add(this.tabStatistic);
             this.tabControl1.Location = new System.Drawing.Point(3, 88);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -85,6 +87,7 @@ namespace BTL_CSharp
             // 
             // tabQLDMSP
             // 
+            this.tabQLDMSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLDMSP.Location = new System.Drawing.Point(4, 29);
             this.tabQLDMSP.Name = "tabQLDMSP";
             this.tabQLDMSP.Padding = new System.Windows.Forms.Padding(3);
@@ -95,6 +98,7 @@ namespace BTL_CSharp
             // 
             // tabQLHD
             // 
+            this.tabQLHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLHD.Location = new System.Drawing.Point(4, 29);
             this.tabQLHD.Name = "tabQLHD";
             this.tabQLHD.Padding = new System.Windows.Forms.Padding(3);
@@ -105,6 +109,7 @@ namespace BTL_CSharp
             // 
             // tabQLNCC
             // 
+            this.tabQLNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLNCC.Location = new System.Drawing.Point(4, 29);
             this.tabQLNCC.Name = "tabQLNCC";
             this.tabQLNCC.Size = new System.Drawing.Size(1570, 737);
@@ -114,6 +119,7 @@ namespace BTL_CSharp
             // 
             // tabQLNV
             // 
+            this.tabQLNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLNV.Location = new System.Drawing.Point(4, 29);
             this.tabQLNV.Name = "tabQLNV";
             this.tabQLNV.Size = new System.Drawing.Size(1570, 737);
@@ -123,6 +129,7 @@ namespace BTL_CSharp
             // 
             // tabQLKH
             // 
+            this.tabQLKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQLKH.Location = new System.Drawing.Point(4, 29);
             this.tabQLKH.Name = "tabQLKH";
             this.tabQLKH.Size = new System.Drawing.Size(1570, 737);
@@ -132,6 +139,7 @@ namespace BTL_CSharp
             // 
             // tabCreateBill
             // 
+            this.tabCreateBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabCreateBill.Location = new System.Drawing.Point(4, 29);
             this.tabCreateBill.Name = "tabCreateBill";
             this.tabCreateBill.Size = new System.Drawing.Size(1570, 737);
@@ -141,6 +149,7 @@ namespace BTL_CSharp
             // 
             // tabStatistic
             // 
+            this.tabStatistic.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabStatistic.Location = new System.Drawing.Point(4, 29);
             this.tabStatistic.Name = "tabStatistic";
             this.tabStatistic.Size = new System.Drawing.Size(1570, 737);
@@ -163,17 +172,27 @@ namespace BTL_CSharp
             // 
             // lblWelcome
             // 
-            this.lblWelcome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblWelcome.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lblWelcome.AutoSize = true;
             this.lblWelcome.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblWelcome.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblWelcome.Location = new System.Drawing.Point(10, 60);
             this.lblWelcome.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lblWelcome.Name = "lblWelcome";
-            this.lblWelcome.Size = new System.Drawing.Size(1571, 24);
+            this.lblWelcome.Size = new System.Drawing.Size(94, 24);
             this.lblWelcome.TabIndex = 1;
             this.lblWelcome.Text = "Xin chào";
             this.lblWelcome.Click += new System.EventHandler(this.lblWelcome_Click);
+            // 
+            // tabQLTK
+            // 
+            this.tabQLTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabQLTK.Location = new System.Drawing.Point(4, 29);
+            this.tabQLTK.Name = "tabQLTK";
+            this.tabQLTK.Size = new System.Drawing.Size(1570, 737);
+            this.tabQLTK.TabIndex = 7;
+            this.tabQLTK.Text = "Quản lý tài khoản";
+            this.tabQLTK.UseVisualStyleBackColor = true;
             // 
             // frmMenuAction
             // 
@@ -209,5 +228,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblWelcome;
         private System.Windows.Forms.TabPage tabStatistic;
+        private System.Windows.Forms.TabPage tabQLTK;
     }
 }
