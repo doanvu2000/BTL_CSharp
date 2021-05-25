@@ -15,9 +15,15 @@ namespace BTL_CSharp
     {
         HoaDon hd = new HoaDon();
         ChiTietHD chiTietHD = new ChiTietHD();
+        TaiKhoan user;
         public frmHoaDon()
         {
             InitializeComponent();
+        }
+         public frmHoaDon(TaiKhoan x)
+        {
+            InitializeComponent();
+            user = x;
         }
 
         void PopulateDataGridView()
@@ -78,8 +84,8 @@ namespace BTL_CSharp
 
         private void btnLoc_Click(object sender, EventArgs e)
         {
-            var tuNgay = Convert.ToDateTime(txtTuNgay.Text.Trim());
-            var denNgay = Convert.ToDateTime(txtDenNgay.Text.Trim());
+            var tuNgay = dateTimePicker1.Value;
+            var denNgay = dateTimePicker2.Value;
             using (DBEntites db = new DBEntites())
             {
                 var hd = db.HoaDons.Select(x => new
@@ -112,6 +118,12 @@ namespace BTL_CSharp
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCreateBill_Click(object sender, EventArgs e)
+        {
+            frmBeforeCreateBill frm = new frmBeforeCreateBill(user);            
+            frm.Show();
         }
     }
 }
