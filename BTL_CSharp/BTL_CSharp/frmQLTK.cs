@@ -66,12 +66,14 @@ namespace BTL_CSharp
                 MessageBox.Show("This UserName already exists, double Click in Table to Delete Account!");
                 return;
             }
+
             var acc = db.TaiKhoans.Where(t => t.manv == manv).FirstOrDefault();
             if (acc != null)
             {
                 MessageBox.Show("This person already has an account, double Click in Table to Delete Account!");
                 return;
             }
+
             int role = 1;
             if (rdRoleStaff.Checked == true) role = 2;
             var newAccount = new TaiKhoan 

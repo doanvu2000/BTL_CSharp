@@ -23,11 +23,16 @@ namespace BTL_CSharp
         private void frmStatistic_Load(object sender, EventArgs e)
         {
         }
+
+        /*
+        *phương thức lấy toàn bộ sản phẩm được bán trong khoảng thời gian đang xét
+        *gồm các thông tin: masp, tensp, slban, gia
+        */
         public List<SanPhamTam> GetAllSanPhamByDate(DateTime dateStart, DateTime dateEnd)
         {
             List<SanPhamTam> ls = new List<SanPhamTam>();
-            var hd = db.HoaDons.Select(s => s);
-            foreach (var s in hd)
+            var hd = db.HoaDons.Select(s => s);// lấy ra tất cả hóa đơn
+            foreach (var s in hd) // duyệt danh sách các hóa đơn
             {
                 DateTime ngaylap = s.NgayLap.Value;
                 if (DateTime.Compare(ngaylap, dateStart) >= 0 &&
@@ -48,7 +53,7 @@ namespace BTL_CSharp
                         });
                     //record: tất cả các sản phẩm được bán vào thời gian "date"
                     foreach (var item in record)
-                    {
+                    {//duyệt và thêm vào list
                         int masp = item.masp;
                         string tensp = item.tensp;
                         int slban = (int)item.slban;
@@ -62,6 +67,9 @@ namespace BTL_CSharp
             }
             return ls;
         }
+        /*
+         *thiết lập hiển thị trên màn hình
+         */
         public void setInformation()
         {
             if (list.Count <= 0)
@@ -96,17 +104,6 @@ namespace BTL_CSharp
                + "       -    Số lượng: " + slMin;
         }
 
-        private void btnOneDay_Click(object sender, EventArgs e)
-        {
-            DateTime now = DateTime.Today;
-            start = end = now;
-            list = GetAllSanPhamByDate(now, now);
-            setInformation();
-            list.Sort((x, y) => { return x.SLMua - y.SLMua; });
-            dgvSanPham.DataSource = null;
-            dgvSanPham.DataSource = list;
-            dgvSanPham.Columns.RemoveAt(4);
-        }
         public int CheckInList(int masp, List<SanPhamTam> ls)
         {
             for (int i = 0; i < ls.Count; i++)
@@ -118,7 +115,17 @@ namespace BTL_CSharp
             }
             return -1;
         }
-
+        private void btnOneDay_Click(object sender, EventArgs e)
+        {
+            DateTime now = DateTime.Today;
+            start = end = now;
+            list = GetAllSanPhamByDate(now, now);
+            setInformation();
+            list.Sort((x, y) => { return x.SLMua - y.SLMua; });
+            dgvSanPham.DataSource = null;
+            dgvSanPham.DataSource = list;
+            dgvSanPham.Columns.RemoveAt(4);
+        }
         private void btnBetween_Click(object sender, EventArgs e)
         {
             DateTime timeBegin = dateTimeBegin.Value;

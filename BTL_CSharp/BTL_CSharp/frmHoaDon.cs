@@ -50,24 +50,24 @@ namespace BTL_CSharp
             }
         }
 
-        private void btnXoaDH_Click(object sender, EventArgs e)
-        {
-            hd.MaHD = Convert.ToInt32(dgvHoaDon.CurrentRow.Cells["MaHD"].Value);
-            if (MessageBox.Show("Bạn có muốn xóa trường này", "EF CRUD Operatio", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                using(DBEntites db = new DBEntites())
-                {
-                    hd = db.HoaDons.Where(x => x.MaHD == hd.MaHD).FirstOrDefault();
-                    chiTietHD = db.ChiTietHDs.Where(x => x.MaHD == hd.MaHD).FirstOrDefault();
-                    var entry = db.Entry(hd);
-                    //if (entry.State == EntityState.Detached)
-                    //    db.HoaDons.Attach(hd);
-                    db.HoaDons.Remove(hd);
-                    db.ChiTietHDs.Remove(chiTietHD);
-                    db.SaveChanges();
-                    MessageBox.Show("Xoa thanh cong");
-                }
-            PopulateDataGridView();
-        }
+        //private void btnXoaDH_Click(object sender, EventArgs e)
+        //{
+        //    hd.MaHD = Convert.ToInt32(dgvHoaDon.CurrentRow.Cells["MaHD"].Value);
+        //    if (MessageBox.Show("Bạn có muốn xóa trường này", "EF CRUD Operatio", MessageBoxButtons.YesNo) == DialogResult.Yes)
+        //        using(DBEntites db = new DBEntites())
+        //        {
+        //            hd = db.HoaDons.Where(x => x.MaHD == hd.MaHD).FirstOrDefault();
+        //            chiTietHD = db.ChiTietHDs.Where(x => x.MaHD == hd.MaHD).FirstOrDefault();
+        //            var entry = db.Entry(hd);
+        //            //if (entry.State == EntityState.Detached)
+        //            //    db.HoaDons.Attach(hd);
+        //            db.HoaDons.Remove(hd);
+        //            db.ChiTietHDs.Remove(chiTietHD);
+        //            db.SaveChanges();
+        //            MessageBox.Show("Xoa thanh cong");
+        //        }
+        //    PopulateDataGridView();
+        //}
 
         private void frmHoaDon_DoubleClick(object sender, EventArgs e)
         {
@@ -124,6 +124,22 @@ namespace BTL_CSharp
         {
             frmBeforeCreateBill frm = new frmBeforeCreateBill(user);            
             frm.Show();
+        }
+
+        private void btnXemHD_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow viewRow = dgvHoaDon.CurrentRow;
+                int ma = int.Parse(viewRow.Cells["MaHD"].Value + "");
+                ChiTietHoaDon ss = new ChiTietHoaDon(ma);
+                ss.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("vui lòng chọn 1 dòng");
+            }
+            
         }
     }
 }

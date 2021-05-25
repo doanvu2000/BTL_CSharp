@@ -45,8 +45,7 @@ namespace BTL_CSharp
                     Close();
                 }
                 else
-                {
-                    
+                {                   
                     frmLapHoaDon form = new frmLapHoaDon((KhachHang)kh, tk,true);
                     form.ShowDialog();
                     Close();

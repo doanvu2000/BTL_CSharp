@@ -36,7 +36,6 @@ namespace BTL_CSharp
             this.label4 = new System.Windows.Forms.Label();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.btnXemHD = new System.Windows.Forms.Button();
-            this.btnXoaDH = new System.Windows.Forms.Button();
             this.btnLoc = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCreateBill = new System.Windows.Forms.Button();
@@ -122,21 +121,7 @@ namespace BTL_CSharp
             this.btnXemHD.TabIndex = 6;
             this.btnXemHD.Text = "Xem Hóa đơn";
             this.btnXemHD.UseVisualStyleBackColor = false;
-            // 
-            // btnXoaDH
-            // 
-            this.btnXoaDH.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoaDH.BackColor = System.Drawing.SystemColors.Highlight;
-            this.btnXoaDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaDH.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnXoaDH.Location = new System.Drawing.Point(809, 305);
-            this.btnXoaDH.Margin = new System.Windows.Forms.Padding(2);
-            this.btnXoaDH.Name = "btnXoaDH";
-            this.btnXoaDH.Size = new System.Drawing.Size(93, 63);
-            this.btnXoaDH.TabIndex = 6;
-            this.btnXoaDH.Text = "Xóa đơn hàng";
-            this.btnXoaDH.UseVisualStyleBackColor = false;
-            this.btnXoaDH.Click += new System.EventHandler(this.btnXoaDH_Click);
+            this.btnXemHD.Click += new System.EventHandler(this.btnXemHD_Click);
             // 
             // btnLoc
             // 
@@ -171,7 +156,7 @@ namespace BTL_CSharp
             this.btnCreateBill.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnCreateBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateBill.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCreateBill.Location = new System.Drawing.Point(809, 390);
+            this.btnCreateBill.Location = new System.Drawing.Point(809, 340);
             this.btnCreateBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateBill.Name = "btnCreateBill";
             this.btnCreateBill.Size = new System.Drawing.Size(93, 63);
@@ -205,7 +190,6 @@ namespace BTL_CSharp
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnLoc);
             this.Controls.Add(this.btnCreateBill);
-            this.Controls.Add(this.btnXoaDH);
             this.Controls.Add(this.btnXemHD);
             this.Controls.Add(this.dgvHoaDon);
             this.Controls.Add(this.label4);
@@ -230,7 +214,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.Button btnXemHD;
-        private System.Windows.Forms.Button btnXoaDH;
         private System.Windows.Forms.Button btnLoc;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnCreateBill;
