@@ -58,7 +58,7 @@ namespace BTL_CSharp
             }
             else if (tabName == "tabQLHD")
             {//QLHD
-                frmHoaDon frm = new frmHoaDon();
+                frmHoaDon frm = new frmHoaDon(user);
                 frm.TopLevel = false; // set parent != desktop
                 frm.Dock = DockStyle.Fill;
                 frm.FormBorderStyle = FormBorderStyle.None;
