@@ -69,7 +69,7 @@ namespace BTL_CSharp
                 /*
                  * Sử dụng đối tượng SanPhamTonTam để thao tác dữ liệu tránh trường hợp người dùng 
                  * thêm sản phầm nhưng trả lại hoặc hủy đơn hàng.
-                 * Không thao tác trực tiếp trên database.
+                 * Không thao tác trực tiếp trên model database.
                  */
                 for (int i = 0; i < sp.ToList().Count; i++)
                 {
@@ -79,7 +79,6 @@ namespace BTL_CSharp
                     float gia = float.Parse(sp.ToList()[i].gia.ToString());
                     string ncc = sp.ToList()[i].ncc.ToString();
                     li.Add(new SanPhamTonTam(masp, tensp, slton, gia, ncc));
-
                 }
                 gridviewSanPham.DataSource = li.ToList();
                 gridviewSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -119,9 +118,7 @@ namespace BTL_CSharp
                 {
                     list[tonTaiSP].SLMua = list[tonTaiSP].SLMua + 1;
                 }
-                int slmua = SoLuongSP(masp);
-                CapNhatSL(masp, slmua);
-                //bugs
+                CapNhatSL(masp);
                 gridviewGioHang.DataSource = list.ToList();
                 gridviewGioHang.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
@@ -155,10 +152,8 @@ namespace BTL_CSharp
 
                 HoaDon new_HD = new HoaDon();
                 new_HD.NgayLap = DateTime.Today;
-                //fix
                 new_HD.MaKH = kh.MaKH;               
                 new_HD.MaNV = (int)tk.manv;
-                //----
                 //add HoaDon
                 db.HoaDons.Add(new_HD);
                 db.SaveChanges();
@@ -189,24 +184,22 @@ namespace BTL_CSharp
          */
         private int TonTaiSanPham(SanPhamTam sp, int masp)
         {
-            int viTri = -1;
             for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].MaSP == masp)
-                    viTri = i;
+                    return i;
             }
-            return viTri;
+            return -1;
         }
 
         private int ViTriSPT(int masp)
         {
-            int vt = -1;
             for (int i = 0; i < li.Count; i++)
             {
                 if (li[i].masp == masp)
-                    vt = i;
+                    return i;
             }
-            return vt;
+            return -1;
         }
 
         /*
@@ -245,24 +238,11 @@ namespace BTL_CSharp
             gridviewSanPham.DataSource = li.ToList();
             gridviewSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        /*
-         * Hàm trả về số lượng sản phẩm đã mua trong gridviewCart
-         */
-        private int SoLuongSP(int masp)
-        {
-            int sl = 0;
-            for (int i = 0; i < list.Count; i++)
-            {
-                if (list[i].MaSP == masp)
-                    sl = list[i].SLMua;
-            }
-            return sl;
-        }
 
         /*
          * Hàm tự động cập nhật số lượng sản phẩm tồn
          */
-        private void CapNhatSL(int masp, int sl)
+        private void CapNhatSL(int masp)
         {
             for (int i = 0; i < li.Count; i++)
             {
