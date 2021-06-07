@@ -108,6 +108,10 @@ namespace BTL_CSharp
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrWhiteSpace(txtTenDM.Text.Trim()))
+            {
+                return;
+            }
             dm.TenDM = txtTenDM.Text.Trim();
             db.DanhMucs.Add(dm);
             db.SaveChanges();
@@ -128,21 +132,49 @@ namespace BTL_CSharp
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa danh mục này?", "Xác nhận xóa",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var entry = db.Entry(dm);
-                if (entry.State == EntityState.Detached)
-                    db.DanhMucs.Attach(dm);
-                db.DanhMucs.Remove(dm);
-                db.SaveChanges();
-                btnCancel_Click(sender, e);
-                Form1_Load(sender, e);
+                try
+                {
+                    var entry = db.Entry(dm);
+                    if (entry.State == EntityState.Detached)
+                        db.DanhMucs.Attach(dm);
+                    db.DanhMucs.Remove(dm);
+                    db.SaveChanges();
+                    btnCancel_Click(sender, e);
+                    Form1_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }             
             }
         }
-
+        public bool ValidateProduct()
+        {
+            if (txtTenDM.Text == "DM") return false;
+            if (string.IsNullOrWhiteSpace(txtTenSP.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtSoLuongTon.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtGia.Text)) return false;
+            if (string.IsNullOrWhiteSpace(txtMoTa.Text)) return false;
+            return true;
+        }
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-            sp.SLTon = int.Parse(txtSoLuongTon.Text.ToString());
-            sp.Gia = int.Parse(txtGia.Text.ToString());
-            sp.MaDM = int.Parse(txtMaDM.Text.ToString());
+            if (!ValidateProduct())
+            {
+                MessageBox.Show("Vui lòng nhập đủ các trường!");
+                return;
+            }
+            try
+            {
+                sp.SLTon = int.Parse(txtSoLuongTon.Text.ToString());
+                sp.Gia = int.Parse(txtGia.Text.ToString());
+                sp.MaDM = int.Parse(txtMaDM.Text.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }           
             sp.TenSP = txtTenSP.Text;
             sp.MoTa = txtMoTa.Text;
             sp.MaNCC = cblNCC.SelectedIndex + 1;
@@ -154,9 +186,17 @@ namespace BTL_CSharp
 
         private void btnSuaSP_Click(object sender, EventArgs e)
         {
-            sp.SLTon = int.Parse(txtSoLuongTon.Text.ToString());
-            sp.Gia = int.Parse(txtGia.Text.ToString());
-            sp.MaDM = int.Parse(txtMaDM.Text.ToString());
+            try
+            {
+                sp.SLTon = int.Parse(txtSoLuongTon.Text.ToString());
+                sp.Gia = int.Parse(txtGia.Text.ToString());
+                sp.MaDM = int.Parse(txtMaDM.Text.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
             sp.TenSP = txtTenSP.Text;
             sp.MoTa = txtMoTa.Text;
             sp.MaNCC = cblNCC.SelectedIndex + 1;
@@ -171,13 +211,20 @@ namespace BTL_CSharp
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận xóa",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var entry = db.Entry(sp);
-                if (entry.State == EntityState.Detached)
-                    db.SanPhams.Attach(sp);
-                db.SanPhams.Remove(sp);
-                db.SaveChanges();
-                btnCancelSP_Click(sender, e);
-                Form1_Load(sender, e);
+                try
+                {
+                    var entry = db.Entry(sp);
+                    if (entry.State == EntityState.Detached)
+                        db.SanPhams.Attach(sp);
+                    db.SanPhams.Remove(sp);
+                    db.SaveChanges();
+                    btnCancelSP_Click(sender, e);
+                    Form1_Load(sender, e);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

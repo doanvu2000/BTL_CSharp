@@ -120,7 +120,7 @@ namespace BTL_CSharp
 
         private void dgvTaiKhoan_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            
         }
 
         private void dgvTaiKhoan_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -130,13 +130,21 @@ namespace BTL_CSharp
             if (MessageBox.Show("Are you sure to delete this account?", "Confirm Delete",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                var nv = db.TaiKhoans.Where(t => t.UserName == username).FirstOrDefault();
-                var entry = db.Entry(nv);
-                if (entry.State == EntityState.Detached)
-                    db.TaiKhoans.Attach(nv);
-                db.TaiKhoans.Remove(nv);
-                db.SaveChanges();
-                showData();
+                try
+                {
+                    var nv = db.TaiKhoans.Where(t => t.UserName == username).FirstOrDefault();
+                    var entry = db.Entry(nv);
+                    if (entry.State == EntityState.Detached)
+                        db.TaiKhoans.Attach(nv);
+                    db.TaiKhoans.Remove(nv);
+                    db.SaveChanges();
+                    showData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
             }
         }
     }

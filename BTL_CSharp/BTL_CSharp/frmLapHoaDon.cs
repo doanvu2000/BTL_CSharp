@@ -41,7 +41,8 @@ namespace BTL_CSharp
 
             if (sale)
             {
-                lblSale.Text = "Đã mua hàng ít nhất 1 lần, được giảm 2% hóa đơn";
+                //lblSale.Text = "Đã mua hàng ít nhất 1 lần, được giảm 2% hóa đơn";
+                lblSale.Text = "";
             }
             else lblSale.Text = "";
         }
@@ -269,10 +270,10 @@ namespace BTL_CSharp
             {
                 sum += s.Gia * s.SLMua;
             }
-            if (sale)
-            {
-                sum = (sum * 98) / 100;
-            }
+            //if (sale)
+            //{
+            //    sum = (sum * 98) / 100;
+            //}
             //format money vietnamese
             CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
             string total = sum.ToString("#,###.###", cul.NumberFormat);

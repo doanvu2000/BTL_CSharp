@@ -86,6 +86,11 @@ namespace BTL_CSharp
         {
             var tuNgay = dateTimePicker1.Value;
             var denNgay = dateTimePicker2.Value;
+            if (DateTime.Compare(tuNgay,denNgay) > 0)
+            {
+                MessageBox.Show("Ngày bắt đầu phải nhỏ hơn ngày kết thúc!");
+                return;
+            }
             using (DBEntites db = new DBEntites())
             {
                 var hd = db.HoaDons.Select(x => new

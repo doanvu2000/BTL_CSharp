@@ -96,7 +96,7 @@ namespace BTL_CSharp
             this.txtMaNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMaNCC.Name = "txtMaNCC";
             this.txtMaNCC.Size = new System.Drawing.Size(181, 22);
-            this.txtMaNCC.TabIndex = 3;
+            this.txtMaNCC.TabIndex = 1;
             // 
             // txtTenNCC
             // 
@@ -104,7 +104,7 @@ namespace BTL_CSharp
             this.txtTenNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenNCC.Name = "txtTenNCC";
             this.txtTenNCC.Size = new System.Drawing.Size(181, 22);
-            this.txtTenNCC.TabIndex = 4;
+            this.txtTenNCC.TabIndex = 2;
             // 
             // label4
             // 
@@ -168,7 +168,7 @@ namespace BTL_CSharp
             this.btnHuy.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(139, 55);
-            this.btnHuy.TabIndex = 6;
+            this.btnHuy.TabIndex = 7;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
@@ -196,7 +196,7 @@ namespace BTL_CSharp
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(139, 55);
-            this.btnThem.TabIndex = 6;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.button1_Click);
@@ -224,7 +224,7 @@ namespace BTL_CSharp
             this.btnTraCuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTraCuu.Name = "btnTraCuu";
             this.btnTraCuu.Size = new System.Drawing.Size(172, 42);
-            this.btnTraCuu.TabIndex = 2;
+            this.btnTraCuu.TabIndex = 9;
             this.btnTraCuu.Text = "TraCuu";
             this.btnTraCuu.UseVisualStyleBackColor = false;
             this.btnTraCuu.Click += new System.EventHandler(this.btnTraCuu_Click);
@@ -238,7 +238,7 @@ namespace BTL_CSharp
             this.txtTraCuu.Multiline = true;
             this.txtTraCuu.Name = "txtTraCuu";
             this.txtTraCuu.Size = new System.Drawing.Size(172, 40);
-            this.txtTraCuu.TabIndex = 1;
+            this.txtTraCuu.TabIndex = 8;
             // 
             // label6
             // 
