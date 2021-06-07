@@ -85,7 +85,7 @@ namespace BTL_CSharp
             }
             else if (tabName == "tabQLKH")
             {//QLKH
-                frmQLKH frm = new frmQLKH();
+                frmQLKH frm = new frmQLKH(user);
                 frm.TopLevel = false; // set parent != desktop
                 frm.Dock = DockStyle.Fill;
                 frm.FormBorderStyle = FormBorderStyle.None;

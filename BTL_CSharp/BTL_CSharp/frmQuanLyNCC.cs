@@ -21,6 +21,12 @@ namespace BTL_CSharp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (!validate(txtTenNCC.Text.Trim()) || !validate(txtSDT.Text.Trim()) ||
+                !validate(txtDiaChi.Text.Trim()))
+            {
+                MessageBox.Show("Vui lòng nhập đủ thông tin!");
+                return;
+            }
             ncc.TenNCC = txtTenNCC.Text.Trim();
             ncc.SDT = txtSDT.Text.Trim();
             ncc.DiaChi = txtDiaChi.Text.Trim();
@@ -34,7 +40,6 @@ namespace BTL_CSharp
             }
             Clear();
             PopulateDataGridView();
-            MessageBox.Show("Tác vụ thành công");
         }
         void Clear()
         {
@@ -95,39 +100,59 @@ namespace BTL_CSharp
         private void btnXoa_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Bạn có muốn xóa dòng này?", "EF CRUD Operation", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                using(DBEntites db = new DBEntites())
+                try
                 {
-                    var entry = db.Entry(ncc);
-                    if (entry.State == EntityState.Detached)
-                        db.NCCs.Attach(ncc);
-                    db.NCCs.Remove(ncc);
-                    PopulateDataGridView();
-                    Clear();
-                    MessageBox.Show("Xóa thành công");
+                    using (DBEntites db = new DBEntites())
+                    {
+                        var entry = db.Entry(ncc);
+                        if (entry.State == EntityState.Detached)
+                            db.NCCs.Attach(ncc);
+                        db.NCCs.Remove(ncc);
+                        db.SaveChanges();
+                        PopulateDataGridView();
+                        Clear();
+                    }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("NCC này đang phân phối hàng, không thể xóa! Mã lỗi: "+ex.Message);
+                }
+                
         }
 
         private void btnTraCuu_Click(object sender, EventArgs e)
         {
-            int maTraCuu = int.Parse(txtTraCuu.Text.ToString());
+            int maTraCuu = 0;
+            
 
-
-            using (DBEntites db = new DBEntites())
+            try
             {
-                var ncc = db.NCCs.Select(x => new
-                {
-                    MaNCC = x.MaNCC,
-                    TenNCC = x.TenNCC,
-                    SDT = x.SDT,
-                    DiaChi = x.DiaChi
-                }).Where(x => x.MaNCC == maTraCuu);
-                dgvNCC.DataSource = null;
-                dgvNCC.DataSource = ncc.ToList();
-                for (int i = 0; i < dgvNCC.ColumnCount; i++)
-                {
-                    dgvNCC.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-                }
+                maTraCuu = int.Parse(txtTraCuu.Text.ToString());
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
+            if (maTraCuu != 0)
+            {
+                using (DBEntites db = new DBEntites())
+                {
+                    var ncc = db.NCCs.Select(x => new
+                    {
+                        MaNCC = x.MaNCC,
+                        TenNCC = x.TenNCC,
+                        SDT = x.SDT,
+                        DiaChi = x.DiaChi
+                    }).Where(x => x.MaNCC == maTraCuu);
+                    dgvNCC.DataSource = null;
+                    dgvNCC.DataSource = ncc.ToList();
+                    for (int i = 0; i < dgvNCC.ColumnCount; i++)
+                    {
+                        dgvNCC.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                    }
+                }
+            }        
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -142,6 +167,11 @@ namespace BTL_CSharp
             txtTenNCC.Text = viewRow.Cells[1].Value + "";
             txtSDT.Text = viewRow.Cells[2].Value + "";
             txtDiaChi.Text = viewRow.Cells[3].Value + "";
+        }
+        public bool validate(string s)
+        {
+            if (String.IsNullOrWhiteSpace(s)) return false;
+            return true;
         }
     }
 }

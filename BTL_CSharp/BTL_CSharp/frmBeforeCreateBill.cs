@@ -22,6 +22,13 @@ namespace BTL_CSharp
             InitializeComponent();
             tk = x;
         }
+        public frmBeforeCreateBill(TaiKhoan x,string sdt)
+        {
+            InitializeComponent();
+            tk = x;
+            textBox1.Text = sdt;
+        }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -31,12 +38,17 @@ namespace BTL_CSharp
         private void btnShow_Click(object sender, EventArgs e)
         {
             string sdt = textBox1.Text;
+            if (string.IsNullOrWhiteSpace(sdt))
+            {
+                MessageBox.Show("Vui lòng nhập sđt");
+                return;
+            }
             using (DBEntites db = new DBEntites())
             {
                 var kh = db.KhachHangs.Select(s => s).Where(s => s.SDT == sdt).FirstOrDefault();
                 if (kh == null)
                 {
-                    frmQLKH frmqlkh = new frmQLKH(sdt);
+                    frmQLKH frmqlkh = new frmQLKH(sdt,tk);
                     frmqlkh.ShowDialog();
                     List<KhachHang> khs = db.KhachHangs.ToList();
                     KhachHang newKH = khs[khs.Count - 1];

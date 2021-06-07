@@ -22,6 +22,18 @@ namespace BTL_CSharp
         DateTime start, end;
         private void frmStatistic_Load(object sender, EventArgs e)
         {
+            var today = DateTime.Today;
+            var month = new DateTime(today.Year, today.Month, 1);
+            var first = month.AddMonths(-1);
+            var last = month.AddDays(-1);
+            start = first;
+            end = last;
+            list = GetAllSanPhamByDate(first, last);
+            setInformation("tháng trước");
+            list.Sort((y, x) => { return x.SLMua - y.SLMua; });
+            dgvSanPham.DataSource = null;
+            dgvSanPham.DataSource = list;
+            dgvSanPham.Columns.RemoveAt(dgvSanPham.Columns.Count-1);
         }
 
         /*
@@ -101,6 +113,39 @@ namespace BTL_CSharp
             lblMaxProDuct.Text = "Sản phẩm bán chạy nhất: " + list[CheckInList(maspMax, list)].TenSP
                 + "       -    Số lượng: " + slMax;
             lblMinProDuct.Text = "Sản phẩm bán ít nhất: " + list[CheckInList(maspMin, list)].TenSP
+               + "       -    Số lượng: " + slMin;
+        }
+        public void setInformation(string str)
+        {
+            if (list.Count <= 0)
+            {
+                lblToTal.Text = "Tổng doanh thu: 0 VNĐ";
+                lblMaxProDuct.Text = lblMinProDuct.Text = "";
+                return;
+            }
+            int sum = 0;
+            int slMax = list[0].SLMua, slMin = list[0].SLMua;
+            int maspMax = list[0].MaSP, maspMin = list[0].MaSP;
+            foreach (var s in list)
+            {
+                sum += s.Gia * s.SLMua;
+                if (s.SLMua > slMax)
+                {
+                    slMax = s.SLMua;
+                    maspMax = s.MaSP;
+                }
+                if (s.SLMua < slMin)
+                {
+                    slMin = s.SLMua;
+                    maspMin = s.MaSP;
+                }
+            }
+            CultureInfo cul = CultureInfo.GetCultureInfo("vi-VN");   // try with "en-US"
+            string total = sum.ToString("#,###.###", cul.NumberFormat);
+            lblToTal.Text = "Tổng doanh thu " + str + ": " + total + "VNĐ";
+            lblMaxProDuct.Text = "Sản phẩm bán chạy nhất " + str + ": " + list[CheckInList(maspMax, list)].TenSP
+                + "       -    Số lượng: " + slMax;
+            lblMinProDuct.Text = "Sản phẩm bán ít nhất " + str + ": " + list[CheckInList(maspMin, list)].TenSP
                + "       -    Số lượng: " + slMin;
         }
 
@@ -190,22 +235,22 @@ namespace BTL_CSharp
             excelApp.Cells[rowIndex, 2] = "STT";
             for (int i = 1; i < dgvSanPham.Columns.Count + 1; i++)
             {
-                excelApp.Cells[rowIndex, i+2] = dgvSanPham.Columns[i - 1].HeaderText;
+                excelApp.Cells[rowIndex, i + 2] = dgvSanPham.Columns[i - 1].HeaderText;
             }
             rowIndex++;
             //data table
             int count = 1;
             for (int i = 0; i < dgvSanPham.Rows.Count; i++)
             {
-                excelApp.Cells[i + rowIndex,  2] = count;
+                excelApp.Cells[i + rowIndex, 2] = count;
                 for (int j = 0; j < dgvSanPham.Columns.Count; j++)
-                {   
-                    excelApp.Cells[i + rowIndex, j + 3] = dgvSanPham.Rows[i].Cells[j].Value+"";
+                {
+                    excelApp.Cells[i + rowIndex, j + 3] = dgvSanPham.Rows[i].Cells[j].Value + "";
                 }
                 count++;
 
             }
-            rowIndex += count+2;
+            rowIndex += count + 2;
             excelApp.Cells[rowIndex, 1] = lblToTal.Text;
             rowIndex += 2;
             excelApp.Cells[rowIndex, 1] = lblMaxProDuct.Text;

@@ -73,17 +73,15 @@ namespace BTL_CSharp
                     nv.DiaChi = txtdiachi.Text.Trim();
                     nv.Luong = int.Parse(txtluong.Text.Trim());
                     db.NhanViens.Add(nv);
-                    db.SaveChanges();
-                    MessageBox.Show("thêm Thành Công", "Thông Báo");
+                    db.SaveChanges();                  
                     frmQLNV_Load(sender, e);
                     clear();
                 }
                 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                MessageBox.Show("vui lòng nhập đủ thông tin","thông báo");
+                MessageBox.Show(ex.Message);
             }
            
         }
@@ -92,22 +90,21 @@ namespace BTL_CSharp
         {
             try
             {
+                nv.MaNV = int.Parse(dgvNhanVien.CurrentRow.Cells[0].Value + "");
                 nv.TenNV = txttennv.Text.ToString();
                 nv.SDT = txtsdt.Text.ToString();
                 nv.DiaChi = txtdiachi.Text.ToString();
                 nv.Luong = int.Parse(txtluong.Text.ToString());
                 db.Entry(nv).State = EntityState.Modified;
                 db.SaveChanges();
-                MessageBox.Show("Sửa Thành Công", "Thông Báo");
                 frmQLNV_Load(sender, e);
                 clear();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
                 MessageBox.Show("vui lòng nhập đủ thông tin cần sửa", "thông báo");
             }
-            
+
         }
 
         public void clear()
@@ -129,13 +126,22 @@ namespace BTL_CSharp
             else if (MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận xóa",
                MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //var entry = db.Entry(nv);
-                db.Entry(nv).State = EntityState.Deleted;
-                db.NhanViens.Attach(nv);
-                db.NhanViens.Remove(nv);
-                db.SaveChanges();
-                frmQLNV_Load(sender, e);
-                clear();
+                try
+                {
+                    nv.MaNV = int.Parse(dgvNhanVien.CurrentRow.Cells[0].Value+"");
+                    //var entry = db.Entry(nv);
+                    db.Entry(nv).State = EntityState.Deleted;
+                    db.NhanViens.Attach(nv);
+                    db.NhanViens.Remove(nv);
+                    db.SaveChanges();
+                    frmQLNV_Load(sender, e);
+                    clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Nhân viên này đang làm việc, không thể xóa!" + ex.Message);
+                }
+                
             }
         }
 
@@ -150,9 +156,7 @@ namespace BTL_CSharp
             if (txttimkiem.Text == "")
             {
                 MessageBox.Show("vui lòng nhập số điện thoại", "thông báo");
-
-            }
-           
+            }          
             else
             {
                 string b = txttimkiem.Text.Trim().ToString();
@@ -163,7 +167,7 @@ namespace BTL_CSharp
                         SDT = x.SDT,
                         Diachi = x.DiaChi,
                         Luong = x.Luong
-                    }).Where(a => a.SDT.Contains(b)==true).ToList() ;
+                    }).Where(a => a.SDT.Contains(b)).ToList() ;
             }
 
         }

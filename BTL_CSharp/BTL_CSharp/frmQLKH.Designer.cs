@@ -51,6 +51,7 @@ namespace BTL_CSharp
             this.label1 = new System.Windows.Forms.Label();
             this.btnhuy = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnCreateBill = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -138,7 +139,7 @@ namespace BTL_CSharp
             this.btndong.Margin = new System.Windows.Forms.Padding(4);
             this.btndong.Name = "btndong";
             this.btndong.Size = new System.Drawing.Size(140, 47);
-            this.btndong.TabIndex = 10;
+            this.btndong.TabIndex = 11;
             this.btndong.Text = "&Đóng";
             this.btndong.UseVisualStyleBackColor = false;
             this.btndong.Click += new System.EventHandler(this.btndong_Click);
@@ -304,6 +305,20 @@ namespace BTL_CSharp
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnCreateBill
+            // 
+            this.btnCreateBill.BackColor = System.Drawing.SystemColors.Highlight;
+            this.btnCreateBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCreateBill.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCreateBill.Location = new System.Drawing.Point(35, 536);
+            this.btnCreateBill.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCreateBill.Name = "btnCreateBill";
+            this.btnCreateBill.Size = new System.Drawing.Size(140, 47);
+            this.btnCreateBill.TabIndex = 10;
+            this.btnCreateBill.Text = "&Lập hóa đơn";
+            this.btnCreateBill.UseVisualStyleBackColor = false;
+            this.btnCreateBill.Click += new System.EventHandler(this.btnCreateBill_Click);
+            // 
             // frmQLKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -318,6 +333,7 @@ namespace BTL_CSharp
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnTim);
+            this.Controls.Add(this.btnCreateBill);
             this.Controls.Add(this.btndong);
             this.Controls.Add(this.btnxoa);
             this.Controls.Add(this.btnsua);
@@ -366,5 +382,6 @@ namespace BTL_CSharp
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnhuy;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnCreateBill;
     }
 }

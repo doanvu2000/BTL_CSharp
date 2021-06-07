@@ -15,17 +15,25 @@ namespace BTL_CSharp
     {
         DBEntites db = new DBEntites();
         KhachHang kh = new KhachHang();
+        TaiKhoan user;
         string sdt="";
         public frmQLKH()
         {
             InitializeComponent();
-        }
-        public frmQLKH(string sd)
+        } 
+        public frmQLKH(TaiKhoan x)
         {
             InitializeComponent();
-            sdt = sd;         
+            user = x;
         }
-
+        public frmQLKH(string sd,TaiKhoan x)
+        {
+            InitializeComponent();
+            sdt = sd;
+            user = x;
+        } 
+        
+        
         private void frmQLKH_Load(object sender, EventArgs e)
         {
             HienThi();
@@ -66,16 +74,15 @@ namespace BTL_CSharp
                     kh.DiaChi = txtdiachikh.Text.Trim();
                     db.KhachHangs.Add(kh);
                     db.SaveChanges();
-                    MessageBox.Show("thêm Thành Công", "Thông Báo");
                     frmQLKH_Load(sender, e);
                     clear();
                 }
                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("vui lòng nhập đủ thông tin", "thông báo");
+                MessageBox.Show(ex.Message);
             }
            
         }
@@ -100,14 +107,12 @@ namespace BTL_CSharp
                 kh.DiaChi = txtdiachikh.Text.ToString();
                 db.Entry(kh).State = EntityState.Modified;
                 db.SaveChanges();
-                MessageBox.Show("Sửa Thành Công", "Thông Báo");
-
                 frmQLKH_Load(sender, e);
                 clear();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("vui lòng nhập đủ thông tin cần sửa", "thông báo");
+                MessageBox.Show(ex.Message);
 
             }
           
@@ -123,13 +128,21 @@ namespace BTL_CSharp
             else if (MessageBox.Show("Bạn có chắc chắn muốn xóa sản phẩm này?", "Xác nhận xóa",
                 MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                //var entry = db.Entry(kh);
-                db.Entry(kh).State = EntityState.Deleted;
+                try
+                {
+                    kh.MaKH = int.Parse(dgvKhachHang.CurrentRow.Cells[0] + "");
+                    //var entry = db.Entry(kh);
+                    db.Entry(kh).State = EntityState.Deleted;
                     db.KhachHangs.Attach(kh);
                     db.KhachHangs.Remove(kh);
                     db.SaveChanges();
                     frmQLKH_Load(sender, e);
                     clear();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }               
             }
         }
 
@@ -163,7 +176,7 @@ namespace BTL_CSharp
                     TenKH = x.TenKH,
                     SDT = x.SDT,
                     Diachi = x.DiaChi
-                }).Where(a => a.SDT == txttimkiem.Text.Trim().ToString()).ToList();
+                }).Where(a => a.SDT.Contains(txttimkiem.Text.Trim().ToString())).ToList();
             }         
        }
 
@@ -177,6 +190,22 @@ namespace BTL_CSharp
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnCreateBill_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataGridViewRow viewRow = dgvKhachHang.CurrentRow;
+                string sdt = viewRow.Cells[2].Value + "";
+                var kh = db.KhachHangs.Select(s => s).Where(s => s.SDT == sdt).FirstOrDefault();
+                frmLapHoaDon form = new frmLapHoaDon((KhachHang)kh, user, true);
+                form.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
