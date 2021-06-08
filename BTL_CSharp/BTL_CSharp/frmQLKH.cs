@@ -130,7 +130,6 @@ namespace BTL_CSharp
             {
                 try
                 {
-                    kh.MaKH = int.Parse(dgvKhachHang.CurrentRow.Cells[0] + "");
                     //var entry = db.Entry(kh);
                     db.Entry(kh).State = EntityState.Deleted;
                     db.KhachHangs.Attach(kh);
